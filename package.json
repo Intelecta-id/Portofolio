@@ -1,0 +1,21 @@
+{
+  "name": "kerjaan-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "Lekker-Story",
+    "QTimes-web"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:lekker": "npm run dev --workspace=lekker-story",
+    "dev:qtimes": "npm run dev --workspace=qtimes-web",
+    "build": "turbo run build",
+    "build:lekker": "npm run build --workspace=lekker-story",
+    "build:qtimes": "npm run build --workspace=qtimes-web",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.4"
+  }
+}

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QTimes Cafe Serang - Your Cozy Escape</title>
+    <meta name="description" content="QTimes Cafe Serang. Tempat nongkrong kasual, trendi, dan fotogenik di Kotabaru, Kota Serang. Nikmati hidangan lezat dan minuman signature kami.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/qtimes.png" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Phosphor Icons for modern look) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-container">
+                <img src="assets/images/qtimes.jpg" alt="QTimes Cafe Logo" class="logo-img">
+                <span class="logo-text">QTimes</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link">Beranda</a>
+                <a href="#about" class="nav-link">Tentang Kami</a>
+                <a href="#menu" class="nav-link">Menu Favorit</a>
+                <a href="#testimonials" class="nav-link">Ulasan</a>
+                <a href="#location" class="nav-link">Lokasi</a>
+            </div>
+            <a href="https://wa.me/6281188807247" target="_blank" class="btn btn-primary nav-cta">Reservasi</a>
+            
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content reveal">
+            <div class="rating-badge">
+                <i class="ph-fill ph-star"></i>
+                <span>4.9/5 dari Ratusan Ulasan Google</span>
+            </div>
+            <h1 class="hero-title">Your <em>Cozy Escape</em> in Serang</h1>
+            <p class="hero-subtitle">Rasakan suasana kasual, trendi, dan fotogenik sambil menikmati hidangan fusion dan dessert premium kami.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-outline-light">Lihat Menu</a>
+                <a href="https://wa.me/6281188807247" target="_blank" class="btn btn-primary">Pesan Meja</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal fade-right">
+                    <h2 class="section-title">Lebih Dari Sekadar <span>Kafe</span></h2>
+                    <p>Berlokasi di jantung Kotabaru, Kota Serang, QTimes hadir sebagai tempat peristirahatan yang nyaman bagi Anda. Dengan desain interior yang modern dan *earthy*, setiap sudut kafe kami dirancang untuk menjadi sangat fotogenik dan *welcoming*.</p>
+                    <p>Baik Anda datang untuk nongkrong santai bersama teman, ataupun menghabiskan waktu berkualitas bersama keluarga dan anak-anak, suasana kami yang kasual selalu siap menyambut Anda dengan hangat.</p>
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="ph ph-camera"></i>
+                            <span>Sangat Fotogenik</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph ph-users"></i>
+                            <span>Family Friendly</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph ph-coffee"></i>
+                            <span>Premium Quality</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-images reveal fade-left">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Suasana QTimes Cafe" class="about-img-main">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Kopi di QTimes" class="about-img-sub">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Signature <span>Tastings</span></h2>
+                <p class="section-desc">Pilihan hidangan terbaik kami, dibuat dengan penuh cinta dan bahan berkualitas tinggi.</p>
+            </div>
+
+            <!-- Special Menu Carousel -->
+            <div class="special-carousel-wrapper reveal">
+                <!-- Prev Arrow -->
+                <button class="carousel-arrow carousel-prev" id="specialPrev" aria-label="Previous">
+                    <i class="ph ph-caret-left"></i>
+                </button>
+                <!-- Next Arrow -->
+                <button class="carousel-arrow carousel-next" id="specialNext" aria-label="Next">
+                    <i class="ph ph-caret-right"></i>
+                </button>
+
+                <div class="special-carousel-track" id="specialTrack">
+
+                    <!-- Slide 1: Japan Festival Menu -->
+                    <div class="special-slide">
+                        <div class="special-badge">Must Try</div>
+                        <div class="special-content">
+                            <div class="special-text">
+                                <h3>Japan Festival Menu</h3>
+                                <p>Rasakan sensasi otentik perpaduan cita rasa Jepang yang unik. Edisi spesial yang wajib Anda coba saat berkunjung ke QTimes.</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?auto=format&fit=crop&w=800&q=80" alt="Japan Festival Menu" class="special-img">
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Basque Burnt Cheesecake -->
+                    <div class="special-slide">
+                        <div class="special-badge">Chef's Pick</div>
+                        <div class="special-content">
+                            <div class="special-text">
+                                <h3>Basque Cheesecake</h3>
+                                <p>Dessert ikonik kami dengan lapisan luar yang sempurna kecokelatan dan bagian dalam yang lembut seperti sutera. Satu gigitan dan Anda akan ketagihan.</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80" alt="Basque Cheesecake" class="special-img">
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Poured Tiramisu -->
+                    <div class="special-slide">
+                        <div class="special-badge">Signature</div>
+                        <div class="special-content">
+                            <div class="special-text">
+                                <h3>Poured Tiramisu</h3>
+                                <p>Tiramisu lezat yang disiram dengan saus espresso panas kaya rasa langsung di depan mata Anda — pengalaman dessert yang tak terlupakan.</p>
+                            </div>
+                            <img src="assets/images/plate-tiramisu-with-cup-coffee-background.jpg" alt="Poured Tiramisu" class="special-img">
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Monster Curry -->
+                    <div class="special-slide">
+                        <div class="special-badge">Best Seller</div>
+                        <div class="special-content">
+                            <div class="special-text">
+                                <h3>Monster Curry</h3>
+                                <p>Hidangan kari Jepang kami dengan porsi raksasa yang mengenyangkan, kaya rempah pilihan, dan disajikan dengan nasi hangat pulen sempurna.</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80" alt="Monster Curry" class="special-img">
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Oatsie Latte -->
+                    <div class="special-slide">
+                        <div class="special-badge">Fan Favorite</div>
+                        <div class="special-content">
+                            <div class="special-text">
+                                <h3>Oatsie Latte</h3>
+                                <p>Perpaduan sempurna antara espresso segar dan oat milk premium yang creamy. Pilihan sehat tapi tetap memanjakan, cocok untuk menemani harimu di QTimes.</p>
+                            </div>
+                            <img src="assets/images/vegan-dairy-free-drink.jpg" alt="Oatsie Latte" class="special-img">
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: O.G Steak -->
+                    <div class="special-slide">
+                        <div class="special-badge">Premium</div>
+                        <div class="special-content">
+                            <div class="special-text">
+                                <h3>O.G Steak</h3>
+                                <p>Steak premium kami yang dimasak dengan tingkat kematangan sempurna sesuai selera Anda, disajikan dengan saus spesial QTimes dan sayuran segar.</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="O.G Steak" class="special-img">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- Dot Navigation (Moved outside the card) -->
+            <div class="carousel-dots" id="specialDots">
+                <button class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
+                <button class="carousel-dot" data-index="1" aria-label="Slide 2"></button>
+                <button class="carousel-dot" data-index="2" aria-label="Slide 3"></button>
+                <button class="carousel-dot" data-index="3" aria-label="Slide 4"></button>
+                <button class="carousel-dot" data-index="4" aria-label="Slide 5"></button>
+                <button class="carousel-dot" data-index="5" aria-label="Slide 6"></button>
+            </div>
+
+
+            <div class="menu-categories">
+                <!-- Main Course -->
+                <div class="menu-category reveal">
+                    <h3 class="category-title">Main Course & Fusion</h3>
+                    <div class="menu-grid">
+                        <div class="menu-card">
+                            <div class="menu-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=600&q=80" alt="Monster Curry" loading="lazy">
+                            </div>
+                            <div class="menu-info">
+                                <h4>Monster Curry</h4>
+                                <p>Kari Jepang dengan porsi memuaskan dan rasa rempah yang kaya, disajikan dengan daging pilihan.</p>
+                            </div>
+                        </div>
+                        <div class="menu-card">
+                            <div class="menu-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=600&q=80" alt="Gyudon Matah" loading="lazy">
+                            </div>
+                            <div class="menu-info">
+                                <h4>Gyudon Matah</h4>
+                                <p>Irisan daging sapi lembut ala Jepang berpadu dengan segarnya sambal matah nusantara.</p>
+                            </div>
+                        </div>
+                        <div class="menu-card">
+                            <div class="menu-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="O.G Steak" loading="lazy">
+                            </div>
+                            <div class="menu-info">
+                                <h4>O.G Steak</h4>
+                                <p>Steak klasik *juicy* dengan tingkat kematangan sempurna dan saus spesial QTimes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert & Drinks (2 Columns on large screens) -->
+                <div class="menu-split">
+                    <!-- Desserts -->
+                    <div class="menu-category reveal">
+                        <h3 class="category-title">Sweet Desserts</h3>
+                        <div class="menu-grid compact-grid">
+                            <div class="menu-card">
+                                <div class="menu-img-wrapper">
+                                    <img src="assets/images/slice-cheesecake-with-cherry-topping-sprig-mint-white-plate.jpg" alt="Basque Cheesecake" loading="lazy">
+                                </div>
+                                <div class="menu-info">
+                                    <h4>Basque Cheesecake</h4>
+                                    <p>Sensasi *burnt* di luar dengan kelembutan *creamy* yang lumer di mulut.</p>
+                                </div>
+                            </div>
+                            <div class="menu-card">
+                                <div class="menu-img-wrapper">
+                                    <img src="assets/images/plate-tiramisu-with-cup-coffee-background.jpg" alt="Poured Tiramisu" loading="lazy">
+                                </div>
+                                <div class="menu-info">
+                                    <h4>Poured Tiramisu</h4>
+                                    <p>Tiramisu klasik yang disiram dengan saus espresso kaya rasa di depan mata Anda.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drinks -->
+                    <div class="menu-category reveal fade-up-delay">
+                        <h3 class="category-title">Signature Drinks</h3>
+                        <div class="menu-grid compact-grid">
+                            <div class="menu-card">
+                                <div class="menu-img-wrapper">
+                                    <img src="assets/images/vegan-dairy-free-drink.jpg" alt="Oatsie Latte" loading="lazy">
+                                </div>
+                                <div class="menu-info">
+                                    <h4>Oatsie Latte</h4>
+                                    <p>Perpaduan espresso dan *oat milk* berkualitas yang *creamy*, sehat, dan menyegarkan.</p>
+                                </div>
+                            </div>
+                            <div class="menu-card">
+                                <div class="menu-img-wrapper">
+                                    <img src="assets/images/delicious-cake-glass-arrangement.jpg" alt="Tiramisu Latte" loading="lazy">
+                                </div>
+                                <div class="menu-info">
+                                    <h4>Tiramisu Latte</h4>
+                                    <p>Kopi *dessert* unik dengan aroma dan rasa tiramisu yang memanjakan lidah.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container reveal">
+            <div class="testimonial-header">
+                <div class="rating-huge">4.9</div>
+                <div class="stars">
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                    <i class="ph-fill ph-star"></i>
+                </div>
+                <p>Dari ratusan pelanggan kami di Google Maps.</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testi-card">
+                    <i class="ph-fill ph-quotes"></i>
+                    <p class="testi-text">"Tempatnya super cozy dan sangat aesthetic! Anak-anak juga nyaman di sini. Basque Cheesecake-nya juara banget, lumer di mulut."</p>
+                    <div class="testi-author">
+                        <img src="https://i.pravatar.cc/100?img=5" alt="Reviewer" loading="lazy">
+                        <div>
+                            <h4>Siti Nurhaliza</h4>
+                            <span>Local Guide</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <i class="ph-fill ph-quotes"></i>
+                    <p class="testi-text">"Nyoba Gyudon Matah dan ternyata se-enak itu! Tiramisu Latte-nya juga pas, nggak terlalu manis. Sangat rekomen buat nongkrong bareng temen."</p>
+                    <div class="testi-author">
+                        <img src="https://i.pravatar.cc/100?img=11" alt="Reviewer" loading="lazy">
+                        <div>
+                            <h4>Andi Wijaya</h4>
+                            <span>Pelanggan Setia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <i class="ph-fill ph-quotes"></i>
+                    <p class="testi-text">"Pelayanannya ramah, tempatnya bersih. Poured Tiramisunya bikin nagih. Fix bakal balik lagi ke sini buat nyobain menu yang lain."</p>
+                    <div class="testi-author">
+                        <img src="https://i.pravatar.cc/100?img=47" alt="Reviewer" loading="lazy">
+                        <div>
+                            <h4>Rina Melati</h4>
+                            <span>Local Guide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <div class="location-wrapper reveal">
+                <div class="location-info">
+                    <h2 class="section-title">Temukan <span>Kami</span></h2>
+                    
+                    <div class="info-block">
+                        <i class="ph ph-map-pin"></i>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>Kotabaru, Kec. Serang, Kota Serang,<br>Banten.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <i class="ph ph-clock"></i>
+                        <div>
+                            <h3>Jam Operasional</h3>
+                            <ul>
+                                <li><span>Senin - Kamis</span> <span>11:00 - 21:00</span></li>
+                                <li><span>Jumat - Minggu</span> <span>10:00 - 22:00</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <i class="ph ph-whatsapp-logo"></i>
+                        <div>
+                            <h3>Reservasi & Info</h3>
+                            <p><a href="https://wa.me/6281188807247" target="_blank" class="text-link">0811-8880-7247</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <!-- Embed Google Maps Kotabaru Serang -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15868.610338296803!2d106.1278682!3d-6.1101489!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e418b168260be93%3A0xb1013b3605abaee6!2sQTimes%20Cafe%20Serang%20(Pasar%20Lama%20%2F%20Royal%20Baroe)!5e0!3m2!1sid!2sid!4v1787828831263!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-container" style="color: white;">
+                        <img src="assets/images/qtimes.jpg" alt="QTimes Cafe Logo" class="logo-img" style="border: 2px solid white;">
+                        <span class="logo-text">QTimes</span>
+                    </div>
+                    <p>Tempat nongkrong terbaik di Serang dengan suasana yang nyaman, fotogenik, dan sajian premium.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Navigasi</h3>
+                    <a href="#home">Beranda</a>
+                    <a href="#about">Tentang Kami</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#testimonials">Ulasan</a>
+                </div>
+                
+                <div class="footer-social">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QTimes Cafe Serang. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281188807247" target="_blank" class="floating-wa" aria-label="Chat with us on WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
