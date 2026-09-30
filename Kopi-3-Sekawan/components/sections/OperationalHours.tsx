@@ -75,7 +75,7 @@ export default function OperationalHours() {
             </div>
 
             <div className="space-y-4">
-              <h4 className="font-display text-2xl sm:text-3xl font-extrabold text-oat leading-tight">
+              <h4 className="text-2xl sm:text-3xl font-bold text-oat leading-tight">
                 {brandData.operationalHours.scheduleText}
               </h4>
               <p className="text-sm text-oat/75 leading-relaxed">
@@ -115,7 +115,7 @@ export default function OperationalHours() {
             <span className="text-xs font-bold uppercase tracking-wider text-crema block mb-2">
               Jadwal Lengkap Setiap Hari
             </span>
-            <h3 className="font-display text-2xl font-bold text-espresso mb-6">
+            <h3 className="text-2xl font-bold text-espresso mb-6">
               Jam Pelayanan Harian
             </h3>
 

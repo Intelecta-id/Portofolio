@@ -25,10 +25,10 @@ export default function DigitalMenu() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <Badge variant="stone" icon={Coffee} className="mb-3">
+            <Badge variant="outline" icon={Coffee} className="mb-3">
               Digital Menu & Rekomendasi
             </Badge>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-espresso leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-espresso leading-tight">
               Pilihan Seduhan & Kudapan Hari Ini
             </h2>
             <p className="mt-4 text-base sm:text-lg text-espresso/75 leading-relaxed">
@@ -37,7 +37,7 @@ export default function DigitalMenu() {
             </p>
           </div>
 
-          <Badge variant="sage" icon={CheckCircle2}>
+          <Badge variant="outline" icon={CheckCircle2}>
             Bisa Dipesan via WhatsApp
           </Badge>
         </div>
@@ -100,7 +100,7 @@ export default function DigitalMenu() {
                   <span className="text-[11px] font-bold uppercase tracking-wider text-crema block">
                     {item.categoryLabel}
                   </span>
-                  <h3 className="font-display text-lg font-bold text-espresso mt-1 leading-snug group-hover:text-crema transition-spring">
+                  <h3 className="text-lg font-bold text-espresso mt-1 leading-snug group-hover:text-crema transition-spring">
                     {item.name}
                   </h3>
                   <p className="mt-2 text-xs text-espresso/70 leading-relaxed line-clamp-3">
@@ -112,7 +112,7 @@ export default function DigitalMenu() {
               {/* Price & Order Action */}
               <div className="p-5 pt-0">
                 <div className="pt-3 border-t border-espresso/10 flex items-center justify-between">
-                  <span className="font-display text-base font-extrabold text-espresso">
+                  <span className="text-base font-bold text-espresso">
                     {item.price}
                   </span>
                   <a

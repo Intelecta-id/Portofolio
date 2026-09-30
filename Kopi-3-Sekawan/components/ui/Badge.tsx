@@ -4,21 +4,22 @@ import { LucideIcon } from "lucide-react";
 interface BadgeProps {
   children: React.ReactNode;
   icon?: LucideIcon;
-  variant?: "crema" | "sage" | "dark" | "stone";
+  variant?: "crema" | "sage" | "dark" | "stone" | "outline";
   className?: string;
 }
 
 export default function Badge({
   children,
   icon: Icon,
-  variant = "crema",
+  variant = "outline",
   className = "",
 }: BadgeProps) {
   const variantStyles = {
+    outline: "bg-cream/40 text-espresso border-espresso/20",
     crema: "bg-[#FDF2E7] text-[#D97724] border-[#D97724]/30",
     sage: "bg-[#DCFCE7] text-[#15803D] border-[#15803D]/30",
     dark: "bg-[#281E18] text-[#F7F3ED] border-[#3E2C22]",
-    stone: "bg-[#EFE8DE] text-[#281E18] border-[#D8CEBE]",
+    stone: "bg-[#EFE8DE] text-[#281E18] border-espresso/15",
   };
 
   return (

@@ -20,7 +20,7 @@
   --color-sage-light: #DCFCE7;
   --color-sage-dark: #14532D;
 
-  --font-display: var(--font-syne), system-ui, sans-serif;
+  --font-display: var(--font-jakarta), system-ui, sans-serif;
   --font-body: var(--font-jakarta), system-ui, sans-serif;
 }
 
@@ -84,19 +84,13 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Architectural Grid Texture ── */
+/* ── Texture utilities (clean, solid background) ── */
 .bg-grid-architectural {
-  background-image:
-    linear-gradient(to right, rgba(40, 30, 24, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(40, 30, 24, 0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: none !important;
 }
 
 .bg-grid-architectural-dark {
-  background-image:
-    linear-gradient(to right, rgba(247, 243, 237, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(247, 243, 237, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-image: none !important;
 }
 
 /* ── Custom Spring Transitions ── */

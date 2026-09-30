@@ -35,14 +35,14 @@ export default function WayfindingGuide() {
   };
 
   return (
-    <section id="akses" className="py-20 lg:py-28 bg-oat border-b border-espresso/10 bg-grid-architectural">
+    <section id="akses" className="py-20 lg:py-28 bg-oat border-b border-espresso/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="crema" icon={MapPin} className="mb-3">
+          <Badge variant="outline" icon={MapPin} className="mb-3">
             Panduan Rute & Akses Lokasi
           </Badge>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-espresso leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-espresso leading-tight">
             Menemukan Unit RA-03 dengan Mudah
           </h2>
           <p className="mt-4 text-base sm:text-lg text-espresso/75 leading-relaxed">
@@ -54,7 +54,7 @@ export default function WayfindingGuide() {
         {/* Visual Route Grid: Left Photo + Right Steps */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-14">
           {/* Visual Photo of Entrance/Lobby */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-lg border border-espresso/10 bg-espresso min-h-[320px]">
+          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-sm border border-espresso/10 bg-cream min-h-[320px]">
             <img
               src={brandData.wayfinding.image}
               alt="Pintu masuk dan lobi ritel Apartemen Brooklyn Alam Sutera"
@@ -66,7 +66,7 @@ export default function WayfindingGuide() {
               <span className="text-xs font-bold uppercase tracking-wider text-crema px-2.5 py-1 rounded-md bg-espresso/80 backdrop-blur-sm border border-crema/20 inline-block mb-2">
                 Titik Masuk Ritel
               </span>
-              <h3 className="font-display text-lg font-bold text-oat leading-snug">
+              <h3 className="text-lg font-bold text-oat leading-snug">
                 Lobi Ritel & Drop-Off Lobi Utara Apartemen Brooklyn
               </h3>
               <p className="text-xs text-oat/75 mt-1">
@@ -86,14 +86,14 @@ export default function WayfindingGuide() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="font-display text-xl font-extrabold text-crema">
+                      <span className="text-xl font-bold text-crema">
                         {item.num}
                       </span>
                       <div className="w-8 h-8 rounded-lg bg-espresso text-oat flex items-center justify-center">
                         <Icon className="w-4 h-4" aria-hidden="true" />
                       </div>
                     </div>
-                    <h4 className="font-display text-base font-bold text-espresso leading-snug">
+                    <h4 className="text-base font-bold text-espresso leading-snug">
                       {item.title}
                     </h4>
                     <p className="mt-2 text-xs text-espresso/70 leading-relaxed">

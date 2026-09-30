@@ -11,8 +11,7 @@ Sebagai kedai kopi di lantai dasar apartemen Brooklyn (bukan ruko pinggir jalan 
 - **Aksen Disruptif Kontekstual**: Courtyard Sage Green (`#15803D`) — melambangkan elemen teras taman & ketenangan di tengah beton kota.
 
 ## 3. Tipografi
-- **Headline / Display**: Syne (geometric, bold, architectural feel).
-- **Body & UI**: Plus Jakarta Sans (humanist, legible, contemporary standard).
+- **Headline / Display & Body**: Plus Jakarta Sans (humanist, clean geometric, highly legible, warm modern cafe standard).
 
 ## 4. Standar Aksesibilitas & Micro-interactions
 - Kepatuhan WCAG 2.1 AA rasio kontras >= 4.5:1.

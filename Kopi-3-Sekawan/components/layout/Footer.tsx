@@ -13,7 +13,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-xl bg-crema text-white flex items-center justify-center font-bold">
                 <Coffee className="w-5 h-5" aria-hidden="true" />
               </div>
-              <span className="font-display text-2xl font-bold tracking-tight text-oat">
+              <span className="text-2xl font-bold tracking-tight text-oat">
                 {brandData.name}
               </span>
             </div>

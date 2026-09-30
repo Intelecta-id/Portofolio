@@ -12,14 +12,14 @@ export default function WorkFriendlyAmbience() {
   };
 
   return (
-    <section id="suasana" className="py-20 lg:py-28 bg-oat border-b border-espresso/10 bg-grid-architectural">
+    <section id="suasana" className="py-20 lg:py-28 bg-oat border-b border-espresso/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-14">
-          <Badge variant="sage" icon={Laptop} className="mb-3">
+          <Badge variant="outline" icon={Laptop} className="mb-3">
             WFC & Study-Friendly Spot
           </Badge>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-espresso leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-espresso leading-tight">
             Suasana Nyaman untuk Buka Laptop & Rehat Santai
           </h2>
           <p className="mt-4 text-base sm:text-lg text-espresso/75 leading-relaxed">
@@ -41,7 +41,7 @@ export default function WorkFriendlyAmbience() {
                   <div className="w-12 h-12 rounded-2xl bg-espresso text-oat flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6 text-crema" aria-hidden="true" />
                   </div>
-                  <h3 className="font-display text-base font-bold text-espresso leading-snug">
+                  <h3 className="text-base font-bold text-espresso leading-snug">
                     {fac.title}
                   </h3>
                   <p className="mt-2 text-xs text-espresso/70 leading-relaxed">
@@ -58,25 +58,24 @@ export default function WorkFriendlyAmbience() {
           {brandData.wfcGallery.map((item, idx) => (
             <div
               key={idx}
-              className="group bg-espresso text-oat rounded-3xl overflow-hidden border border-espresso-light/40 shadow-lg flex flex-col justify-between transition-spring hover:shadow-elevation-hover"
+              className="group bg-cream/80 text-espresso rounded-3xl overflow-hidden border border-espresso/15 shadow-sm flex flex-col justify-between transition-spring hover:shadow-elevation"
             >
-              <div className="relative h-60 w-full overflow-hidden bg-espresso-card">
+              <div className="relative h-60 w-full overflow-hidden bg-oat">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-spring group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-espresso via-transparent to-transparent opacity-60" />
               </div>
               <div className="p-6">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-crema block mb-1">
                   Sudut Kedai RA-03
                 </span>
-                <h3 className="font-display text-lg font-bold text-oat leading-snug">
+                <h3 className="text-lg font-bold text-espresso leading-snug">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-xs text-oat/75 leading-relaxed">
+                <p className="mt-2 text-xs text-espresso/75 leading-relaxed">
                   {item.description}
                 </p>
               </div>

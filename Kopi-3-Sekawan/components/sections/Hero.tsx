@@ -17,14 +17,10 @@ import { brandData } from "@/data/brandData";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-oat pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-espresso/10 bg-grid-architectural">
-      {/* Ambient warm lights */}
+    <section className="relative overflow-hidden bg-oat pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-espresso/10">
+      {/* Ambient warm glow */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-crema/10 blur-[130px] rounded-full pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-sage/5 blur-[100px] rounded-full pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-crema/5 blur-[140px] rounded-full pointer-events-none"
         aria-hidden="true"
       />
 
@@ -34,23 +30,20 @@ export default function Hero() {
           <div className="lg:col-span-7 flex flex-col items-start space-y-6">
             {/* Badges */}
             <div className="flex flex-wrap items-center gap-2.5">
-              <Badge variant="crema" icon={MapPin}>
+              <Badge variant="outline" icon={MapPin}>
                 Unit RA-03 Ground Floor
               </Badge>
-              <Badge variant="stone" icon={Building2}>
+              <Badge variant="outline" icon={Building2}>
                 Apartemen Brooklyn Alam Sutera
               </Badge>
-              <Badge variant="sage" icon={CheckCircle2}>
+              <Badge variant="outline" icon={CheckCircle2}>
                 Seduhan Segar Harian
               </Badge>
             </div>
 
             {/* Headline */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-espresso leading-[1.12]">
-              Ngopi Tanpa Repot di Bawah{" "}
-              <span className="text-crema underline decoration-crema/30 decoration-wavy decoration-2">
-                Menara Brooklyn
-              </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-espresso leading-[1.15]">
+              Ngopi Tanpa Repot di Bawah Menara Brooklyn
             </h1>
 
             {/* Sub-headline */}
@@ -101,9 +94,9 @@ export default function Hero() {
 
           {/* Right Column: Real Featured Product Photo Card */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-3xl bg-espresso text-oat p-4 sm:p-5 shadow-2xl border border-espresso-light/40 overflow-hidden transition-spring hover:shadow-elevation-hover group">
-              {/* Product Photo with Ambient Shadow */}
-              <div className="relative h-72 sm:h-96 w-full rounded-2xl overflow-hidden border border-espresso-light/40 bg-espresso-card">
+            <div className="relative rounded-3xl bg-cream border border-espresso/15 p-4 sm:p-5 shadow-sm overflow-hidden transition-spring hover:shadow-elevation group">
+              {/* Product Photo with Clean Framing */}
+              <div className="relative h-72 sm:h-96 w-full rounded-2xl overflow-hidden border border-espresso/10 bg-oat">
                 <img
                   src="/images/hero-coffee.jpg"
                   alt="Es Kopi Susu Signature Kopi 3 Sekawan"
@@ -113,27 +106,20 @@ export default function Hero() {
 
                 {/* Overlay Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-espresso/85 text-oat backdrop-blur-md border border-white/20 shadow-md">
-                    <Sparkles className="w-3.5 h-3.5 text-crema" aria-hidden="true" />
+                  <Badge variant="stone" icon={Sparkles}>
                     Produk Andalan
-                  </span>
+                  </Badge>
                 </div>
 
                 <div
-                  className="absolute bottom-4 left-4 right-4 rounded-xl p-3.5 border border-white/20 flex items-center justify-between shadow-lg"
-                  style={{ backgroundColor: "#1A1412" }}
+                  className="absolute bottom-4 left-4 right-4 rounded-xl p-3.5 border border-espresso/15 flex items-center justify-between shadow-sm bg-cream/95 backdrop-blur-md text-espresso"
                 >
                   <div>
-                    <h3 className="text-sm font-bold text-white">Es Kopi Susu 3 Sekawan</h3>
-                    <p className="text-xs text-[#F7F3ED]/80">Espresso house blend + gula aren murni</p>
+                    <h3 className="text-sm font-bold text-espresso">Es Kopi Susu 3 Sekawan</h3>
+                    <p className="text-xs text-espresso/70">Espresso house blend + gula aren murni</p>
                   </div>
                   <span
-                    className="text-sm font-extrabold px-3 py-1 rounded-lg border"
-                    style={{
-                      backgroundColor: "rgba(217, 119, 36, 0.2)",
-                      color: "#D97724",
-                      borderColor: "rgba(217, 119, 36, 0.5)",
-                    }}
+                    className="text-sm font-extrabold px-3 py-1 rounded-lg border bg-crema-light text-crema border-crema/30"
                   >
                     Rp 22.000
                   </span>
@@ -141,8 +127,8 @@ export default function Hero() {
               </div>
 
               {/* Quick Info bar below image */}
-              <div className="mt-4 px-2 flex items-center justify-between text-xs text-oat/70">
-                <span className="flex items-center gap-1.5">
+              <div className="mt-4 px-2 flex items-center justify-between text-xs text-espresso/70">
+                <span className="flex items-center gap-1.5 font-medium">
                   <Coffee className="w-4 h-4 text-crema" aria-hidden="true" />
                   Biji Kopi Pilihan Berkualitas
                 </span>

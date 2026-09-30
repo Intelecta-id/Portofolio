@@ -21,7 +21,7 @@ export default function Navbar() {
               <Coffee className="w-5 h-5" aria-hidden="true" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display text-xl font-bold tracking-tight text-espresso group-hover:text-crema transition-spring">
+              <span className="text-xl font-bold tracking-tight text-espresso group-hover:text-crema transition-spring">
                 {brandData.name}
               </span>
               <span className="text-xs font-medium text-espresso/70 flex items-center gap-1">
