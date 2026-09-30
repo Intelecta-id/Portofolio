@@ -1,0 +1,117 @@
+/* ============================================================
+   KOPI 3 SEKAWAN — Global CSS
+   Design System: "Vertical sanctuary meets neighborhood coffee warmth"
+   ============================================================ */
+
+@import "tailwindcss";
+
+@theme {
+  --color-oat: #F7F3ED;
+  --color-cream: #EFE8DE;
+  --color-warm-stone: #D8CEBE;
+  --color-espresso: #281E18;
+  --color-espresso-light: #3E2C22;
+  --color-espresso-dark: #1A1412;
+  --color-espresso-card: #241B17;
+  --color-crema: #D97724;
+  --color-crema-hover: #BF6318;
+  --color-crema-light: #FDF2E7;
+  --color-sage: #15803D;
+  --color-sage-light: #DCFCE7;
+  --color-sage-dark: #14532D;
+
+  --font-display: var(--font-syne), system-ui, sans-serif;
+  --font-body: var(--font-jakarta), system-ui, sans-serif;
+}
+
+:root {
+  --color-oat: #F7F3ED;
+  --color-cream: #EFE8DE;
+  --color-warm-stone: #D8CEBE;
+  --color-espresso: #281E18;
+  --color-espresso-light: #3E2C22;
+  --color-espresso-dark: #1A1412;
+  --color-espresso-card: #241B17;
+  --color-crema: #D97724;
+  --color-crema-hover: #BF6318;
+  --color-crema-light: #FDF2E7;
+  --color-sage: #15803D;
+  --color-sage-light: #DCFCE7;
+  --color-sage-dark: #14532D;
+
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-elevation: 0 4px 20px -2px rgba(26, 20, 18, 0.08);
+  --shadow-elevation-hover: 0 16px 32px -4px rgba(26, 20, 18, 0.16);
+}
+
+/* ── Rock-solid utilities fallback for Tailwind v4 ── */
+.bg-oat { background-color: #F7F3ED !important; }
+.bg-cream { background-color: #EFE8DE !important; }
+.bg-espresso { background-color: #281E18 !important; }
+.bg-espresso-card { background-color: #241B17 !important; }
+.bg-espresso-light { background-color: #3E2C22 !important; }
+.bg-espresso-dark { background-color: #1A1412 !important; }
+.bg-crema { background-color: #D97724 !important; }
+.bg-crema-hover:hover { background-color: #BF6318 !important; }
+.bg-crema-light { background-color: #FDF2E7 !important; }
+.bg-sage { background-color: #15803D !important; }
+.bg-sage-light { background-color: #DCFCE7 !important; }
+
+.text-espresso { color: #281E18 !important; }
+.text-oat { color: #F7F3ED !important; }
+.text-crema { color: #D97724 !important; }
+.text-sage { color: #15803D !important; }
+
+.border-espresso { border-color: #281E18 !important; }
+.border-espresso-light { border-color: #3E2C22 !important; }
+.border-crema { border-color: #D97724 !important; }
+.border-sage { border-color: #15803D !important; }
+
+/* ── Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F7F3ED;
+  color: #281E18;
+  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Architectural Grid Texture ── */
+.bg-grid-architectural {
+  background-image:
+    linear-gradient(to right, rgba(40, 30, 24, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(40, 30, 24, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-grid-architectural-dark {
+  background-image:
+    linear-gradient(to right, rgba(247, 243, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(247, 243, 237, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ── Custom Spring Transitions ── */
+.transition-spring {
+  transition-property: transform, box-shadow, border-color, background-color, color, opacity;
+  transition-duration: 350ms;
+  transition-timing-function: var(--ease-spring);
+}
+
+/* ── Accessibility: Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
