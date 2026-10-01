@@ -1,36 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import React from "react";
+import { MessageCircle } from "lucide-react";
 import { brandData } from "@/data/brandData";
 
 export default function StickyWhatsAppButton() {
-  const [showTooltip, setShowTooltip] = useState(true);
-
   return (
     <aside
       aria-label="Aksi Cepat Pesan WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3.5 select-none"
+      className="fixed bottom-6 right-6 z-50 flex items-center select-none"
     >
-      {/* Tooltip banner: 100% solid, fully opaque, bold contrast */}
-      {showTooltip && (
-        <div
-          className="hidden sm:flex items-center gap-2.5 px-4 py-2.5 rounded-full shadow-2xl border-2 border-[#D97724] animate-fade-up"
-          style={{ backgroundColor: "#281E18", color: "#FFFFFF" }}
-        >
-          <span className="text-xs font-extrabold tracking-wide text-white">
-            Pesan Cepat ke Unit / Lobi
-          </span>
-          <button
-            type="button"
-            onClick={() => setShowTooltip(false)}
-            className="p-1 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-spring"
-            aria-label="Tutup info pesan"
-          >
-            <X className="w-3.5 h-3.5" aria-hidden="true" />
-          </button>
-        </div>
-      )}
 
       {/* Main Floating WhatsApp Button: Solid authentic green #25D366, white icon, never transparent */}
       <a
