@@ -54,14 +54,14 @@ export default function WayfindingGuide() {
         {/* Visual Route Grid: Left Photo + Right Steps */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-14">
           {/* Visual Photo of Entrance/Lobby */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-sm border border-espresso/10 bg-cream min-h-[320px]">
+          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-sm border border-espresso/10 bg-cream min-h-[320px] group">
             <img
               src={brandData.wayfinding.image}
               alt="Pintu masuk dan lobi ritel Apartemen Brooklyn Alam Sutera"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover img-zoom"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-espresso via-espresso/40 to-transparent pointer-events-none" />
             <div className="absolute bottom-6 left-6 right-6">
               <span className="text-xs font-bold uppercase tracking-wider text-crema px-2.5 py-1 rounded-md bg-espresso/80 backdrop-blur-sm border border-crema/20 inline-block mb-2">
                 Titik Masuk Ritel

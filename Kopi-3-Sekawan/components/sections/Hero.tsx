@@ -100,7 +100,7 @@ export default function Hero() {
                 <img
                   src="/images/hero-coffee.jpg"
                   alt="Es Kopi Susu Signature Kopi 3 Sekawan"
-                  className="w-full h-full object-cover transition-spring group-hover:scale-105"
+                  className="w-full h-full object-cover img-zoom"
                   loading="eager"
                 />
 

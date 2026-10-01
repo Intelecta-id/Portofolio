@@ -64,7 +64,7 @@ export default function WorkFriendlyAmbience() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-spring group-hover:scale-105"
+                  className="w-full h-full object-cover img-zoom"
                   loading="lazy"
                 />
               </div>

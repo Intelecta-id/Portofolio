@@ -76,7 +76,7 @@ export default function DigitalMenu() {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover transition-spring group-hover:scale-105"
+                    className="w-full h-full object-cover img-zoom"
                     loading="lazy"
                   />
                   {item.badge && (
