@@ -76,27 +76,27 @@ export default function WayfindingGuide() {
           </div>
 
           {/* Step by Step list */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
             {brandData.wayfinding.steps.map((item) => {
               const Icon = iconMap[item.icon] || Compass;
               return (
                 <div
                   key={item.num}
-                  className="bg-cream/75 rounded-2xl p-5 border border-espresso/10 flex flex-col justify-between transition-spring hover:bg-cream hover:shadow-elevation"
+                  className="bg-cream rounded-3xl p-6 sm:p-7 border border-espresso/15 shadow-sm flex flex-col justify-between transition-spring hover:shadow-elevation hover:border-espresso/30"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-xl font-bold text-crema">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-2xl font-black text-crema tracking-tight">
                         {item.num}
                       </span>
-                      <div className="w-8 h-8 rounded-lg bg-espresso text-oat flex items-center justify-center">
-                        <Icon className="w-4 h-4" aria-hidden="true" />
+                      <div className="w-9 h-9 rounded-xl bg-espresso text-oat flex items-center justify-center shadow-xs">
+                        <Icon className="w-4.5 h-4.5 text-crema" aria-hidden="true" />
                       </div>
                     </div>
-                    <h4 className="text-base font-bold text-espresso leading-snug">
+                    <h4 className="text-lg font-bold text-espresso leading-snug tracking-tight">
                       {item.title}
                     </h4>
-                    <p className="mt-2 text-xs text-espresso/70 leading-relaxed">
+                    <p className="mt-2.5 text-sm sm:text-[15px] font-normal text-espresso/90 leading-relaxed">
                       {item.instruction}
                     </p>
                   </div>
@@ -108,25 +108,25 @@ export default function WayfindingGuide() {
 
         {/* Parking Info for Non-Residents */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
-          <div className="bg-cream/60 rounded-3xl p-6 sm:p-7 border border-espresso/10 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-espresso text-oat flex items-center justify-center shrink-0">
+          <div className="bg-cream rounded-3xl p-6 sm:p-7 border border-espresso/15 shadow-sm flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-espresso text-oat flex items-center justify-center shrink-0 shadow-xs">
               <Bike className="w-6 h-6 text-crema" aria-hidden="true" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-espresso">Parkir Motor Pengunjung</h3>
-              <p className="text-xs sm:text-sm text-espresso/75 mt-1.5 leading-relaxed">
+              <h3 className="text-base sm:text-lg font-bold text-espresso">Parkir Motor Pengunjung</h3>
+              <p className="text-sm sm:text-[15px] text-espresso/90 mt-2 leading-relaxed">
                 {brandData.wayfinding.parkingInfo.motor}
               </p>
             </div>
           </div>
 
-          <div className="bg-cream/60 rounded-3xl p-6 sm:p-7 border border-espresso/10 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-espresso text-oat flex items-center justify-center shrink-0">
+          <div className="bg-cream rounded-3xl p-6 sm:p-7 border border-espresso/15 shadow-sm flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-espresso text-oat flex items-center justify-center shrink-0 shadow-xs">
               <Car className="w-6 h-6 text-crema" aria-hidden="true" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-espresso">Parkir Mobil Pengunjung</h3>
-              <p className="text-xs sm:text-sm text-espresso/75 mt-1.5 leading-relaxed">
+              <h3 className="text-base sm:text-lg font-bold text-espresso">Parkir Mobil Pengunjung</h3>
+              <p className="text-sm sm:text-[15px] text-espresso/90 mt-2 leading-relaxed">
                 {brandData.wayfinding.parkingInfo.mobil}
               </p>
             </div>
