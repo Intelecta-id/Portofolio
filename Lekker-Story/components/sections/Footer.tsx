@@ -69,10 +69,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-6 border-t border-[#F3EBD9]/10 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="font-body text-[#F3EBD9]/30 text-xs">
-            &copy; {year} Lekker Story. Semua hak dilindungi.
-          </p>
+        <div className="mt-12 pt-6 border-t border-[#F3EBD9]/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 text-xs text-[#F3EBD9]/40 text-center sm:text-left">
+            <p className="font-body">
+              &copy; {year} Lekker Story. Semua hak dilindungi.
+            </p>
+            <span className="hidden sm:inline text-[#F3EBD9]/20">·</span>
+            <p className="font-body text-[#E8A93B]/80 font-medium">
+              Designed & Developed by <span className="font-bold text-[#F3EBD9]">Intelecta</span>
+            </p>
+          </div>
           <nav className="flex gap-4">
             {[
               { href: "#menu", label: "Menu" },
@@ -84,20 +90,6 @@ export default function Footer() {
               </a>
             ))}
           </nav>
-        </div>
-
-        {/* Watermark Intelecta */}
-        <div className="mt-8 pt-5 border-t border-[#F3EBD9]/10 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-[#F3EBD9]/50">
-          <p className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E8A93B]" aria-hidden="true" />
-            <span>
-              Dibuat & Dikembangkan oleh{" "}
-              <strong className="font-semibold text-[#E8A93B]">Intelecta</strong>
-            </span>
-          </p>
-          <span className="text-[11px] text-[#F3EBD9]/40">
-            Digital Experience Partner
-          </span>
         </div>
       </div>
     </footer>

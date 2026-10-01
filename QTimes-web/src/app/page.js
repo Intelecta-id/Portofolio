@@ -481,22 +481,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <div className="text-center mt-8 text-sm text-qtimes-muted">
-          &copy; {new Date().getFullYear()} QTimes Cafe Serang. All rights reserved.
-        </div>
-
-        {/* Watermark Intelecta */}
-        <div className="mt-6 pt-6 border-t border-qtimes-border/50 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-qtimes-muted pb-8">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-qtimes-primary" aria-hidden="true" />
-            <span>
-              Dibuat & Dikembangkan oleh{" "}
-              <strong className="font-bold text-qtimes-primary tracking-wide">Intelecta</strong>
-            </span>
-          </div>
-          <span className="text-[11px] text-qtimes-muted/70">
-            Digital Experience & Technology by Intelecta
+        <div className="text-center mt-8 pb-10 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-sm text-qtimes-muted">
+          <span>&copy; {new Date().getFullYear()} QTimes Cafe Serang. All rights reserved.</span>
+          <span className="hidden sm:inline text-qtimes-muted/40">·</span>
+          <span className="text-qtimes-primary font-medium">
+            Designed & Developed by <strong className="text-white font-semibold">Intelecta</strong>
           </span>
         </div>
       </footer>
