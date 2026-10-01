@@ -85,6 +85,20 @@ export default function Footer() {
             ))}
           </nav>
         </div>
+
+        {/* Watermark Intelecta */}
+        <div className="mt-8 pt-5 border-t border-[#F3EBD9]/10 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-[#F3EBD9]/50">
+          <p className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#E8A93B]" aria-hidden="true" />
+            <span>
+              Dibuat & Dikembangkan oleh{" "}
+              <strong className="font-semibold text-[#E8A93B]">Intelecta</strong>
+            </span>
+          </p>
+          <span className="text-[11px] text-[#F3EBD9]/40">
+            Digital Experience Partner
+          </span>
+        </div>
       </div>
     </footer>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Coffee, MapPin, Camera, Compass, ExternalLink, ArrowUp } from "lucide-react";
 import { brandData } from "@/data/brandData";
@@ -106,14 +108,30 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <span className="text-oat/40">Company Profile Terintegrasi</span>
-            <a
-              href="#"
-              className="inline-flex items-center gap-1 hover:text-crema transition-spring"
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-espresso-card text-oat/90 border border-espresso-light/50 hover:bg-espresso-light hover:text-crema hover:border-crema/40 text-xs font-semibold shadow-xs transition-spring active:scale-95 cursor-pointer"
+              aria-label="Kembali ke atas halaman"
             >
               <span>Kembali ke Atas</span>
-              <ArrowUp className="w-3 h-3" aria-hidden="true" />
-            </a>
+              <ArrowUp className="w-3.5 h-3.5 text-crema" aria-hidden="true" />
+            </button>
           </div>
+        </div>
+
+        {/* Watermark Intelecta */}
+        <div className="mt-8 pt-6 border-t border-espresso-light/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-oat/60">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-crema" aria-hidden="true" />
+            <span>
+              Dibuat & Dikembangkan oleh{" "}
+              <strong className="font-bold text-crema tracking-wide">Intelecta</strong>
+            </span>
+          </div>
+          <span className="text-[11px] text-oat/40">
+            Digital Experience & Technology Partner
+          </span>
         </div>
       </div>
     </footer>
