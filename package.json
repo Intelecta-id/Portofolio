@@ -6,17 +6,20 @@
   "workspaces": [
     "Lekker-Story",
     "QTimes-web",
-    "Kopi-3-Sekawan"
+    "Kopi-3-Sekawan",
+    "Labuan-Dental-Clinic"
   ],
   "scripts": {
     "dev": "turbo run dev",
     "dev:lekker": "npm run dev --workspace=lekker-story",
     "dev:qtimes": "npm run dev --workspace=qtimes-web",
     "dev:kopi": "npm run dev --workspace=kopi-3-sekawan",
+    "dev:labuan": "npm run dev --workspace=labuan-dental-clinic",
     "build": "turbo run build",
     "build:lekker": "npm run build --workspace=lekker-story",
     "build:qtimes": "npm run build --workspace=qtimes-web",
     "build:kopi": "npm run build --workspace=kopi-3-sekawan",
+    "build:labuan": "npm run build --workspace=labuan-dental-clinic",
     "lint": "turbo run lint"
   },
   "devDependencies": {
