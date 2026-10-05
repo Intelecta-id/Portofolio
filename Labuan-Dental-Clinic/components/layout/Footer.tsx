@@ -11,7 +11,7 @@ import { clinicData } from "@/data/clinicData";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0C2725] text-white pt-16 pb-12 border-t border-[#1C3D3A]">
+    <footer className="bg-[#0C2725] text-white pt-16 pb-16 sm:pb-20 border-t border-[#1C3D3A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#1C3D3A]">
           {/* Brand Info & Legal Status (Fre DentalCare style) */}
@@ -158,29 +158,24 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Footer Bottom: Legal disclaimer & Intelecta credit */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-white/60 pr-0 md:pr-20">
-          <div className="space-y-1 text-center md:text-left">
+        {/* Footer Bottom: Copyright, Intelecta credit & Back to Top button */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/60 pr-0 md:pr-20">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-3 text-center sm:text-left">
             <p>
               &copy; {new Date().getFullYear()} {clinicData.name} ({clinicData.shortName}). Faskes Terdaftar Kemenkes RI.
             </p>
-            <p className="text-[11px] text-white/50 max-w-xl">
-              Informasi pada halaman ini tidak menggantikan pemeriksaan langsung atau saran dari tenaga medis yang berwenang.
-            </p>
-          </div>
-
-          <div className="flex items-center gap-4 shrink-0">
-            <p className="text-xs text-white/70">
+            <span className="text-white/30 hidden sm:inline">|</span>
+            <p className="text-white/70">
               Designed & Developed by <span className="font-bold text-[#5EEAD4]">Intelecta</span>
             </p>
-
+            <span className="text-white/30 hidden sm:inline">|</span>
             <a
               href="#"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#153E3B] text-white hover:bg-[#1E524E] border border-[#2B4B48] transition-spring"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#153E3B] text-white hover:bg-[#1E524E] border border-[#2B4B48] transition-spring group"
               aria-label="Kembali ke atas halaman"
             >
-              <span>Atas</span>
-              <ArrowUp className="w-3.5 h-3.5" aria-hidden="true" />
+              <span>Kembali Keatas</span>
+              <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </a>
           </div>
         </div>
