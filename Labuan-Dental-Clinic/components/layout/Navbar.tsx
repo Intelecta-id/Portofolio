@@ -4,10 +4,6 @@ import React, { useState } from "react";
 import {
   Menu,
   X,
-  Phone,
-  ShieldCheck,
-  MapPin,
-  Calendar,
   MessageCircle,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
@@ -18,44 +14,6 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-[#FBF9F5]/95 backdrop-blur-md border-b border-[#E8E3D9] transition-spring">
-      {/* Top Banner: Legalitas Kemenkes & Hotline */}
-      <div className="bg-[#0C2725] text-white text-xs py-2 px-4 border-b border-[#1A3D3A]">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#E6F2F0]/15 text-[#6EE7B7] font-semibold text-[11px] border border-[#059669]/40">
-              <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-              Faskes Resmi Kemenkes RI
-            </span>
-            <span className="hidden md:inline text-white/40">|</span>
-            <span className="hidden md:inline text-white/80 text-[11px]">
-              Tempat Praktik Mandiri Dokter Gigi, SIP drg. Ansali Iklil Raudoh
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4 text-[11px] text-white/90">
-            <a
-              href={clinicData.location.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 hover:text-[#5EEAD4] transition-colors"
-            >
-              <MapPin className="w-3.5 h-3.5 text-[#5EEAD4]" aria-hidden="true" />
-              <span>Ciateul, Labuan (Samping Gudang Alfa)</span>
-            </a>
-            <span className="hidden sm:inline text-white/30">·</span>
-            <a
-              href={clinicData.contact.getWhatsappUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 font-bold text-[#6EE7B7] hover:underline"
-            >
-              <Phone className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>WA: {clinicData.contact.phoneDisplay}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
