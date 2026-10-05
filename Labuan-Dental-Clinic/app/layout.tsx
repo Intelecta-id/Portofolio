@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -9,8 +9,15 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  weight: ["400", "600", "700", "800"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Labuan Dental Clinic (LDC) — Praktik Mandiri Dokter Gigi Kemenkes RI di Labuan, Pandeglang",
+  title: "Labuan Dental Clinic (LDC) | Praktik Mandiri Dokter Gigi Kemenkes RI di Labuan, Pandeglang",
   description:
     "Fasilitas Tempat Praktik Mandiri Dokter Gigi resmi Kemenkes RI di Labuan, Pandeglang. Melayani scaling ultrasonik, tambal estetik komposit, perawatan gigi anak ramah (pedodonti), dan konsultasi kesehatan rongga mulut.",
   keywords: [
@@ -29,7 +36,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Labuan Dental Clinic" }],
   openGraph: {
-    title: "Labuan Dental Clinic (LDC) — Praktik Mandiri Dokter Gigi Kemenkes RI",
+    title: "Labuan Dental Clinic (LDC) | Praktik Mandiri Dokter Gigi Kemenkes RI",
     description:
       "Pelayanan kesehatan gigi modern, higienis, dan ramah keluarga di pesisir barat Banten. Lokasi strategis di Jl. Nasional III No. 26 Labuan (Samping Gudang Alfa, Ciateul).",
     url: "https://maps.app.goo.gl/pm5W3EuV9yEHUErL7",
@@ -39,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Labuan Dental Clinic (LDC) — Praktik Mandiri Dokter Gigi Resmi",
+    title: "Labuan Dental Clinic (LDC) | Praktik Mandiri Dokter Gigi Resmi",
     description:
       "Perawatan gigi modern, steril, dan bebas cemas bagi keluarga dan anak-anak di Labuan, Pandeglang.",
   },
@@ -51,8 +58,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={plusJakartaSans.variable}>
-      <body className="bg-porcelain text-marine-dark font-body antialiased selection:bg-teal-base selection:text-white">
+    <html lang="id" className={`${plusJakartaSans.variable} ${fraunces.variable}`}>
+      <body className="bg-[#FBF9F5] text-[#0C2725] font-sans antialiased selection:bg-[#0D9488] selection:text-white">
         {children}
       </body>
     </html>

@@ -1,136 +1,73 @@
 "use client";
 
 import React from "react";
-import {
-  Stethoscope,
-  Heart,
-  Award,
-  Calendar,
-  MessageCircle,
-  Sparkles,
-  CheckCircle2,
-  Smile,
-} from "lucide-react";
-import Button from "@/components/ui/Button";
-import Badge from "@/components/ui/Badge";
+import { ShieldCheck, MessageCircle } from "lucide-react";
 import { clinicData } from "@/data/clinicData";
 
 export default function DoctorProfile() {
   const doc = clinicData.doctor;
 
   return (
-    <section id="profil-dokter" className="py-20 lg:py-28 bg-[#F4F8FA] border-b border-[#0B7F8C]/15">
+    <section id="dokter" className="py-16 sm:py-20 bg-[#F3EFEA] border-b border-[#E7E3DC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Portrait Card with Smooth Zoom */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-3xl bg-white border border-[#0B7F8C]/15 p-4 sm:p-5 shadow-elevation transition-spring hover:shadow-elevation-hover group">
-              <div className="relative h-96 sm:h-[460px] w-full rounded-2xl overflow-hidden border border-[#0B7F8C]/10 bg-[#E1F4F6]">
-                <img
-                  src={doc.image}
-                  alt={`Potret ${doc.name} di Labuan Dental Clinic`}
-                  className="w-full h-full object-cover img-zoom"
-                  loading="lazy"
-                />
+        {/* Section Lead */}
+        <div className="max-w-xl mb-10">
+          <span className="text-xs sm:text-sm font-semibold tracking-wider text-[#6B7280] uppercase block mb-1.5">
+            Tim Dokter
+          </span>
+          <h2 className="font-editorial text-2xl sm:text-3xl font-bold text-[#0F2F2E] leading-tight">
+            Kenali tenaga profesional yang tersedia.
+          </h2>
+          <p className="mt-2 text-xs sm:text-sm text-[#4B5563] leading-relaxed">
+            Hanya profil yang telah terverifikasi resmi oleh Kementerian Kesehatan yang muncul di halaman ini.
+          </p>
+        </div>
 
-                {/* Top Badge */}
-                <div className="absolute top-4 left-4">
-                  <Badge variant="verified" icon={Award}>
-                    SIP Praktik Aktif
-                  </Badge>
-                </div>
+        {/* Clean Minimalist Doctor Card (Fre DentalCare style) */}
+        <div className="max-w-3xl rounded-3xl border border-[#E7E3DC] bg-[#FFFFFF] p-5 sm:p-7 shadow-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-8 items-center">
+            {/* Photo */}
+            <div className="sm:col-span-5 relative h-72 sm:h-80 rounded-2xl overflow-hidden bg-[#EAE6DF]">
+              <img
+                src={doc.image}
+                alt={`Potret dokter ${doc.name}`}
+                className="w-full h-full object-cover img-zoom"
+                loading="lazy"
+              />
+            </div>
 
-                {/* Bottom Overlay Label */}
-                <div className="absolute bottom-4 left-4 right-4 rounded-xl p-4 border border-[#0B7F8C]/15 bg-white/95 backdrop-blur-md shadow-sm">
-                  <h3 className="text-base font-bold text-[#0A2230]">{doc.name}</h3>
-                  <p className="text-xs font-semibold text-[#0B7F8C]">{doc.title}</p>
-                  <p className="text-[11px] text-[#4B6375] mt-1">
-                    Anggota Persatuan Dokter Gigi Indonesia (PDGI)
-                  </p>
-                </div>
-              </div>
-
-              {/* Sub-card quote */}
-              <div className="mt-4 p-4 rounded-2xl bg-[#E1F4F6]/50 border border-[#0B7F8C]/15 flex items-start gap-3">
-                <Smile className="w-5 h-5 text-[#0B7F8C] shrink-0 mt-0.5" aria-hidden="true" />
-                <p className="text-xs text-[#1D3546] italic leading-relaxed">
-                  &ldquo;{doc.philosophy}&rdquo;
+            {/* Info */}
+            <div className="sm:col-span-7 space-y-4">
+              <div>
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#E6F2F0] text-[#0D9488] mb-2">
+                  <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
+                  SIP Praktik Kemenkes Aktif
+                </span>
+                <h3 className="font-editorial text-xl sm:text-2xl font-bold text-[#0F2F2E]">
+                  {doc.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#6B7280] mt-0.5">
+                  Dokter Gigi Penanggung Jawab Medis (LDC)
                 </p>
               </div>
-            </div>
-          </div>
 
-          {/* Right Column: Bio, Competencies, and Approach */}
-          <div className="lg:col-span-7 space-y-6">
-            <Badge variant="teal" icon={Stethoscope}>
-              Dokter Gigi Penanggung Jawab
-            </Badge>
+              <p className="text-xs sm:text-sm text-[#4B5563] leading-relaxed">
+                Berpengalaman dalam perawatan gigi preventif, restorasi tambal estetik, dan pendekatan ramah anak tanpa rasa takut.
+              </p>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0A2230] leading-tight">
-              Dedikasi Pelayanan Gigi yang Telaten & Ramah
-            </h2>
-
-            <p className="text-base sm:text-lg text-[#1D3546]/85 leading-relaxed">
-              {doc.clinicalBackground}
-            </p>
-
-            {/* Core Competencies Bento List */}
-            <div className="space-y-3 pt-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0B7F8C] block">
-                Fokus Penanganan Medis Utama
-              </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {doc.specialties.map((spec, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3.5 rounded-2xl bg-white border border-[#0B7F8C]/15 shadow-xs flex items-center gap-3 transition-spring hover:border-[#0B7F8C]/40"
-                  >
-                    <div className="w-8 h-8 rounded-xl bg-[#E1F4F6] text-[#0B7F8C] flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
-                    </div>
-                    <span className="text-xs sm:text-sm font-bold text-[#0A2230]">
-                      {spec}
-                    </span>
-                  </div>
-                ))}
+              <div className="pt-2">
+                <a
+                  href={clinicData.contact.getWhatsappUrl(
+                    `Halo drg. Ansali Iklil Raudoh, saya ingin berkonsultasi mengenai keluhan gigi.`
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0F2F2E] text-white hover:bg-[#1E4543] active:scale-[0.98] transition-spring"
+                >
+                  <MessageCircle className="w-4 h-4 text-[#5EEAD4]" aria-hidden="true" />
+                  <span>Konsultasi dengan Dokter</span>
+                </a>
               </div>
-            </div>
-
-            {/* Clarification about external schedules */}
-            <div className="p-4 rounded-2xl bg-white border border-[#0B7F8C]/20 shadow-xs flex items-start gap-3 text-xs text-[#1D3546]">
-              <Calendar className="w-4 h-4 text-[#0B7F8C] shrink-0 mt-0.5" aria-hidden="true" />
-              <div>
-                <strong className="text-[#0A2230] font-semibold block mb-0.5">
-                  Informasi Jadwal Praktik Mandiri di Labuan:
-                </strong>
-                <span>
-                  drg. Ansali juga memiliki riwayat praktik di Klinik Fafasa23 Cilegon. Jadwal praktik faskes luar
-                  tidak menjadi acuan operasional di Labuan. Pastikan untuk selalu konfirmasi slot via WhatsApp sebelum berkunjung.
-                </span>
-              </div>
-            </div>
-
-            {/* Consultation CTA */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Button
-                href={clinicData.contact.getWhatsappUrl(
-                  "Halo drg. Ansali, saya ingin konsultasi keluhan gigi dan menanyakan jadwal praktik di Labuan Dental Clinic."
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="whatsapp"
-                size="md"
-                icon={MessageCircle}
-              >
-                Konsultasi Langsung dengan Dokter
-              </Button>
-              <Button
-                href="#reservasi"
-                variant="outline"
-                size="md"
-              >
-                Lihat Jadwal Harian
-              </Button>
             </div>
           </div>
         </div>

@@ -10,6 +10,9 @@ export interface ClinicalServiceItem {
   features: string[];
   recommendedInterval?: string;
   image: string;
+  priceRange: string;
+  tariffSource: string;
+  sensationLevel: string;
 }
 
 export interface DoctorProfile {
@@ -134,8 +137,31 @@ export const clinicData = {
 
   services: [
     {
+      id: "konsultasi-oral",
+      name: "Konsultasi & Pemeriksaan Rongga Mulut",
+      category: "konsultasi",
+      categoryLabel: "Pemeriksaan Menyeluruh",
+      status: "Terkonfirmasi Aktif",
+      statusType: "active",
+      summary:
+        "Pemeriksaan teliti seluruh susunan gigi geligi, gusi, lidah, dan jaringan lunak mulut untuk deteksi dini masalah kesehatan gigi.",
+      description:
+        "Konsultasikan keluhan gigi berlubang, gigi goyang, nyeri rahang, atau rencana perbaikan estetika gigi Anda bersama dokter gigi berlisensi.",
+      features: [
+        "Pemeriksaan visual mendalam seluruh kuadran mulut",
+        "Deteksi dini karies tersembunyi antar sela gigi",
+        "Penyusunan rencana tindakan medis yang terstruktur dan transparan",
+        "Rujukan tindakan bila diperlukan rontgen lanjut",
+      ],
+      recommendedInterval: "Pemeriksaan Rutin Setiap 6 Bulan",
+      image: "/images/service-konsultasi.jpg",
+      priceRange: "Rp50.000 – Rp100.000",
+      tariffSource: "Buku Panduan Tarif Layanan Labuan Dental Clinic 2025/2026",
+      sensationLevel: "Pemeriksaan Lembut & Bebas Cemas",
+    },
+    {
       id: "scaling",
-      name: "Scaling & Pembersihan Karang Gigi",
+      name: "Scaling Ultrasonik & Polishing Karang Gigi",
       category: "pencegahan",
       categoryLabel: "Pencegahan & Higienitas",
       status: "Terkonfirmasi Aktif",
@@ -152,6 +178,9 @@ export const clinicData = {
       ],
       recommendedInterval: "Setiap 6 Bulan Sekali",
       image: "/images/service-scaling.jpg",
+      priceRange: "Rp150.000 – Rp350.000",
+      tariffSource: "Buku Panduan Tarif Layanan Labuan Dental Clinic 2025/2026",
+      sensationLevel: "Minim Ngilu / Getaran Halus Air Steril",
     },
     {
       id: "tambal-komposit",
@@ -170,8 +199,11 @@ export const clinicData = {
         "Penyesuaian oklusi agar tidak mengganjal saat mengunyah",
         "Pencegahan karies sekunder yang menyeluruh",
       ],
-      recommendedInterval: "Segera saat gigi mulai berlubang / ngilu",
+      recommendedInterval: "Segera saat gigi mulai berlubang atau ngilu",
       image: "/images/service-tambal.jpg",
+      priceRange: "Rp150.000 – Rp400.000 / Gigi",
+      tariffSource: "Buku Panduan Tarif Layanan Labuan Dental Clinic 2025/2026",
+      sensationLevel: "Anestesi Lembut Jika Diperlukan",
     },
     {
       id: "pedodonti-anak",
@@ -183,7 +215,7 @@ export const clinicData = {
       summary:
         "Pendekatan psikologis ramah anak untuk adaptasi ke dokter gigi sejak dini, penambalan gigi susu, dan aplikasi pencegahan karies.",
       description:
-        "Kunjungan pertama anak dirancang menyenangkan dan tanpa trauma (*positive dental experience*), sehingga anak tidak takut dokter gigi seumur hidup.",
+        "Kunjungan pertama anak dirancang menyenangkan dan tanpa trauma (positive dental experience), sehingga anak tidak takut dokter gigi seumur hidup.",
       features: [
         "Metode 'Tell-Show-Do' komunikatif yang menenangkan",
         "Penanganan gigi berlubang pada gigi susu",
@@ -192,26 +224,9 @@ export const clinicData = {
       ],
       recommendedInterval: "Mulai usia 1 tahun atau gigi pertama tumbuh",
       image: "/images/service-pedodonti.jpg",
-    },
-    {
-      id: "konsultasi-oral",
-      name: "Konsultasi & Pemeriksaan Rongga Mulut",
-      category: "konsultasi",
-      categoryLabel: "Pemeriksaan Menyeluruh",
-      status: "Terkonfirmasi Aktif",
-      statusType: "active",
-      summary:
-        "Pemeriksaan teliti seluruh susunan gigi geligi, gusi, lidah, dan jaringan lunak mulut untuk deteksi dini masalah kesehatan gigi.",
-      description:
-        "Konsultasikan keluhan gigi berlubang, gigi goyang, nyeri rahang, atau rencana perbaikan estetika gigi Anda bersama dokter gigi berlisensi.",
-      features: [
-        "Pemeriksaan visual mendalam seluruh kuadran mulut",
-        "Deteksi dini karies tersembunyi antar sela gigi",
-        "Penyusunan rencana tindakan medis yang terstruktur & transparan",
-        "Rujukan tindakan bila diperlukan pemeriksaan rontgen lanjut",
-      ],
-      recommendedInterval: "Pemeriksaan Rutin Setiap 6 Bulan",
-      image: "/images/service-konsultasi.jpg",
+      priceRange: "Rp100.000 – Rp250.000",
+      tariffSource: "Buku Panduan Tarif Layanan Labuan Dental Clinic 2025/2026",
+      sensationLevel: "Pendekatan Ramah Tanpa Jarum / Santai",
     },
     {
       id: "ortodonti-behel",
@@ -225,13 +240,16 @@ export const clinicData = {
       description:
         "Ketersediaan pemasangan behel, pemilihan jenis bracket (metal/keramik), dan jadwal kontrol wajib dikonfirmasikan terlebih dahulu ke WhatsApp klinik.",
       features: [
-        "Analisis sefalometri & model cetak studi",
+        "Analisis sefalometri dan model cetak studi",
         "Opsi bracket estetika sesuai kebutuhan klinis",
         "Jadwal kontrol berkala per 3-4 minggu",
         "Perlu konfirmasi jadwal dokter khusus",
       ],
       recommendedInterval: "Berdasarkan evaluasi dokter gigi",
       image: "/images/service-behel.jpg",
+      priceRange: "Estimasi Kasus / Konfirmasi Dokter",
+      tariffSource: "Buku Panduan Tarif Layanan Labuan Dental Clinic 2025/2026",
+      sensationLevel: "Konsultasi Rencana Perawatan Mandiri",
     },
     {
       id: "bleaching-gigi",
@@ -252,6 +270,9 @@ export const clinicData = {
       ],
       recommendedInterval: "Sesuai indikasi estetika individu",
       image: "/images/service-bleaching.jpg",
+      priceRange: "Estimasi Bahan / Konfirmasi WhatsApp",
+      tariffSource: "Buku Panduan Tarif Layanan Labuan Dental Clinic 2025/2026",
+      sensationLevel: "Isolasi Gusi Presisi & Gel Netral",
     },
     {
       id: "perawatan-saluran-akar",
@@ -272,6 +293,9 @@ export const clinicData = {
       ],
       recommendedInterval: "Berdasarkan diagnosa nyeri gigi akut",
       image: "/images/service-saluran-akar.jpg",
+      priceRange: "Estimasi Multi-Visit / Konfirmasi Dokter",
+      tariffSource: "Buku Panduan Tarif Layanan Labuan Dental Clinic 2025/2026",
+      sensationLevel: "Anestesi Pulpa Total / Menghilangkan Nyeri",
     },
     {
       id: "odontektomi-bedah-bungsu",
@@ -288,10 +312,13 @@ export const clinicData = {
         "Anestesi lokal steril tanpa rasa sakit selama tindakan",
         "Insisi minimal invasif untuk pemulihan cepat",
         "Instruksi pasca operasi lengkap dan obat pereda nyeri",
-        "Wajib membawa foto rontgen & konfirmasi jadwal",
+        "Wajib membawa foto rontgen dan konfirmasi jadwal",
       ],
-      recommendedInterval: "Bila gigi bungsu miring / impaksi",
+      recommendedInterval: "Bila gigi bungsu miring atau impaksi",
       image: "/images/service-bedah.jpg",
+      priceRange: "Estimasi Tingkat Kesulitan / Rontgen",
+      tariffSource: "Buku Panduan Tarif Layanan Labuan Dental Clinic 2025/2026",
+      sensationLevel: "Anestesi Blok Lokal Terkendali",
     },
   ] as ClinicalServiceItem[],
 

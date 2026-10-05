@@ -26,25 +26,25 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-bold rounded-xl transition-spring focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
+    "inline-flex items-center justify-center font-bold rounded-2xl transition-spring focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
 
   const sizeStyles = {
     sm: "text-xs px-4 py-2 gap-1.5",
     md: "text-sm px-5 py-2.5 gap-2",
-    lg: "text-base px-6 py-3.5 gap-2.5 font-bold",
+    lg: "text-sm sm:text-base px-6 py-3.5 gap-2.5 font-bold",
   };
 
   const variantStyles = {
     primary:
-      "bg-[#0B7F8C] text-white hover:bg-[#075E68] active:scale-[0.98] shadow-md hover:shadow-lg focus-visible:ring-[#0B7F8C]",
+      "bg-[#0C2725] text-white hover:bg-[#153E3B] active:scale-[0.98] shadow-sm hover:shadow-md focus-visible:ring-[#0C2725]",
     secondary:
-      "bg-[#0A2230] text-[#FFFFFF] hover:bg-[#1D3546] active:scale-[0.98] shadow-md hover:shadow-lg focus-visible:ring-[#0A2230]",
+      "bg-[#FFFFFF] text-[#0C2725] border border-[#E8E3D9] hover:bg-[#F5F1EB] hover:border-[#D8D2C5] active:scale-[0.98] shadow-xs focus-visible:ring-[#0C2725]",
     outline:
-      "border-2 border-[#0B7F8C]/30 text-[#075E68] bg-transparent hover:border-[#0B7F8C] hover:bg-[#E1F4F6] active:scale-[0.98] focus-visible:ring-[#0B7F8C]",
+      "border border-[#0D9488]/40 text-[#09736A] bg-transparent hover:border-[#0D9488] hover:bg-[#E6F2F0] active:scale-[0.98] focus-visible:ring-[#0D9488]",
     ghost:
-      "text-[#075E68] bg-transparent hover:bg-[#E1F4F6] active:scale-[0.98] focus-visible:ring-[#0B7F8C]",
+      "text-[#09736A] bg-transparent hover:bg-[#E6F2F0] active:scale-[0.98] focus-visible:ring-[#0D9488]",
     whatsapp:
-      "bg-[#25D366] text-white hover:bg-[#1EBE5D] active:scale-[0.98] shadow-md hover:shadow-lg focus-visible:ring-[#25D366]",
+      "bg-[#107C41] text-white hover:bg-[#0B6634] active:scale-[0.98] shadow-sm hover:shadow-md focus-visible:ring-[#107C41]",
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;

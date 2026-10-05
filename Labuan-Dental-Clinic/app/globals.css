@@ -1,85 +1,45 @@
 /* ============================================================
-   LABUAN DENTAL CLINIC (LDC) — Global CSS
-   Design System: "Pristine clinical excellence meets warm coastal care"
+   LABUAN DENTAL CLINIC (LDC) - Global CSS
+   Editorial Serenity: Warm Clinical Aesthetic (Anti-AI-Slop)
+   WCAG 2.1 AA Compliant (Text Contrast >= 5.0:1 across all surfaces)
    ============================================================ */
 
 @import "tailwindcss";
 
 @theme {
-  --color-porcelain: #F4F8FA;
-  --color-porcelain-light: #FAFDFE;
+  --color-warm-linen: #FBF9F5;
+  --color-warm-surface: #F5F1EB;
+  --color-warm-border: #E8E3D9;
   --color-card-white: #FFFFFF;
-  --color-marine-dark: #0A2230;
-  --color-marine-light: #1D3546;
-  --color-marine-muted: #4B6375;
-  --color-teal-base: #0B7F8C;
-  --color-teal-dark: #075E68;
-  --color-teal-light: #E1F4F6;
-  --color-teal-mint: #EBF8F9;
-  --color-emerald-verified: #059669;
-  --color-emerald-light: #ECFDF5;
-  --color-coral-warm: #E26D5C;
-  --color-coral-light: #FEF2F0;
-  --color-amber-star: #D97706;
-  --color-amber-light: #FEF3C7;
 
-  --font-display: var(--font-jakarta), system-ui, sans-serif;
-  --font-body: var(--font-jakarta), system-ui, sans-serif;
+  --color-slate-deep: #0C2725;
+  --color-slate-body: #1B3C39;
+  --color-slate-muted: #4D6765;
+
+  --color-teal-accent: #0D9488;
+  --color-teal-deep: #09736A;
+  --color-sage-soft: #E6F2F0;
+  --color-sage-border: #C8E3DE;
+
+  --color-coral-disruptive: #C85A46;
+  --color-coral-soft: #FDF1EE;
+  --color-amber-star: #D97706;
+  --color-amber-soft: #FEF3C7;
+  --color-emerald-verified: #059669;
+  --color-emerald-soft: #ECFDF5;
+
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
 }
 
 :root {
-  --color-porcelain: #F4F8FA;
-  --color-porcelain-light: #FAFDFE;
-  --color-card-white: #FFFFFF;
-  --color-marine-dark: #0A2230;
-  --color-marine-light: #1D3546;
-  --color-marine-muted: #4B6375;
-  --color-teal-base: #0B7F8C;
-  --color-teal-dark: #075E68;
-  --color-teal-light: #E1F4F6;
-  --color-teal-mint: #EBF8F9;
-  --color-emerald-verified: #059669;
-  --color-emerald-light: #ECFDF5;
-  --color-coral-warm: #E26D5C;
-  --color-coral-light: #FEF2F0;
-  --color-amber-star: #D97706;
-  --color-amber-light: #FEF3C7;
-
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-  --shadow-elevation: 0 6px 24px -2px rgba(10, 34, 48, 0.07);
-  --shadow-elevation-hover: 0 18px 38px -4px rgba(10, 34, 48, 0.14);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --shadow-subtle: 0 4px 20px -2px rgba(12, 39, 37, 0.05);
+  --shadow-card-hover: 0 16px 32px -4px rgba(12, 39, 37, 0.09);
 }
 
-/* ── Rock-solid utilities fallback for Tailwind v4 ── */
-.bg-porcelain { background-color: #F4F8FA !important; }
-.bg-porcelain-light { background-color: #FAFDFE !important; }
-.bg-card-white { background-color: #FFFFFF !important; }
-.bg-marine-dark { background-color: #0A2230 !important; }
-.bg-marine-light { background-color: #1D3546 !important; }
-.bg-teal-base { background-color: #0B7F8C !important; }
-.bg-teal-dark { background-color: #075E68 !important; }
-.bg-teal-light { background-color: #E1F4F6 !important; }
-.bg-teal-mint { background-color: #EBF8F9 !important; }
-.bg-emerald-verified { background-color: #059669 !important; }
-.bg-emerald-light { background-color: #ECFDF5 !important; }
-.bg-coral-warm { background-color: #E26D5C !important; }
-.bg-coral-light { background-color: #FEF2F0 !important; }
-
-.text-marine-dark { color: #0A2230 !important; }
-.text-marine-light { color: #1D3546 !important; }
-.text-marine-muted { color: #4B6375 !important; }
-.text-teal-base { color: #0B7F8C !important; }
-.text-teal-dark { color: #075E68 !important; }
-.text-emerald-verified { color: #059669 !important; }
-.text-coral-warm { color: #E26D5C !important; }
-.text-amber-star { color: #D97706 !important; }
-
-.border-marine-dark { border-color: #0A2230 !important; }
-.border-teal-base { border-color: #0B7F8C !important; }
-.border-teal-light { border-color: #E1F4F6 !important; }
-.border-emerald-verified { border-color: #059669 !important; }
-
-/* ── Base ── */
+/* Base resets & typography */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -89,21 +49,31 @@ html {
 }
 
 body {
-  background-color: #F4F8FA;
-  color: #0A2230;
+  background-color: #FBF9F5;
+  color: #0C2725;
   font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* ── Custom Spring Transitions ── */
-.transition-spring {
-  transition-property: transform, box-shadow, border-color, background-color, color, opacity;
-  transition-duration: 350ms;
-  transition-timing-function: var(--ease-spring);
+.font-editorial {
+  font-family: var(--font-fraunces), Georgia, serif;
 }
 
-/* ── Smooth Image Zoom (Micro-interaction) ── */
+/* Custom Spring Transitions */
+.transition-spring {
+  transition-property: transform, box-shadow, border-color, background-color, color, opacity;
+  transition-duration: 380ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.transition-bounce {
+  transition-property: transform, box-shadow;
+  transition-duration: 450ms;
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Smooth Image Zoom (Micro-interaction) */
 .img-zoom {
   transition: transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
@@ -113,10 +83,10 @@ body {
 
 .group:hover .img-zoom,
 .img-zoom:hover {
-  transform: scale(1.08);
+  transform: scale(1.06);
 }
 
-/* ── Accessibility: Reduced Motion ── */
+/* Accessibility: Reduced Motion (WCAG 2.3.3) */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

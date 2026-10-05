@@ -1,169 +1,89 @@
 "use client";
 
 import React from "react";
-import {
-  ShieldCheck,
-  Star,
-  Calendar,
-  Sparkles,
-  ArrowRight,
-  CheckCircle2,
-  MapPin,
-  Clock,
-  Phone,
-} from "lucide-react";
-import Button from "@/components/ui/Button";
-import Badge from "@/components/ui/Badge";
+import { MapPin, ArrowRight } from "lucide-react";
 import { clinicData } from "@/data/clinicData";
 
 export default function Hero() {
   return (
-    <section className="relative pt-12 pb-20 lg:pt-16 lg:pb-28 bg-[#F4F8FA] overflow-hidden">
-      {/* Decorative Background Glows */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#0B7F8C]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#38BDF8]/5 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative pt-12 pb-16 lg:pt-16 lg:pb-20 bg-[#FAF9F6] border-b border-[#E7E3DC]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* Left Column: Minimalist Editorial Copy */}
+          <div className="lg:col-span-6 space-y-6">
+            <span className="text-xs sm:text-sm font-semibold tracking-wider text-[#6B7280] uppercase block">
+              {clinicData.name} · Labuan, Pandeglang
+            </span>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Headlines, Trust Proof, Action CTAs */}
-          <div className="lg:col-span-7 space-y-6">
-            {/* Top Badges */}
-            <div className="flex flex-wrap items-center gap-2.5">
-              <Badge variant="verified" icon={ShieldCheck}>
-                Kemenkes RI · Praktik Mandiri Dokter Gigi
-              </Badge>
-              <Badge variant="amber" icon={Star}>
-                Rating 5.0 ({clinicData.reputation.totalReviews} Ulasan Pasien)
-              </Badge>
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A2230] leading-[1.12]">
-              Kesehatan Gigi Keluarga,{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0B7F8C] to-[#075E68]">
-                Nyaman & Bebas Cemas
-              </span>{" "}
-              di Labuan
+            <h1 className="font-editorial text-3xl sm:text-4xl lg:text-[3.25rem] font-bold text-[#0F2F2E] leading-[1.18] tracking-tight">
+              Ruang klinik yang tenang, informasi yang jelas.
             </h1>
 
-            {/* Sub-headline */}
-            <p className="text-base sm:text-lg text-[#1D3546]/85 leading-relaxed max-w-2xl">
-              Fasilitas pelayanan gigi modern berizin resmi Kemenkes RI di bawah penanganan{" "}
-              <strong className="text-[#0A2230] font-semibold">drg. Ansali Iklil Raudoh</strong>.
-              Hadir memberikan perawatan scaling ultrasonik, restorasi tambal estetik, dan pedodonti ramah anak
-              tanpa perlu menempuh perjalanan jauh ke Serang atau Cilegon.
+            <p className="text-base sm:text-lg text-[#2C4A48] leading-relaxed max-w-xl">
+              Kenali layanan, dokter, suasana ruang, dan lokasi Labuan Dental Clinic dengan lebih nyaman sebelum kunjunganmu.
             </p>
 
-            {/* Quick Feature Checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              <div className="flex items-center gap-2.5 text-sm font-semibold text-[#0A2230]">
-                <CheckCircle2 className="w-4 h-4 text-[#0B7F8C] shrink-0" aria-hidden="true" />
-                <span>Sterilisasi Autoklaf Medis 100%</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-sm font-semibold text-[#0A2230]">
-                <CheckCircle2 className="w-4 h-4 text-[#0B7F8C] shrink-0" aria-hidden="true" />
-                <span>Pendekatan Ramah Anak (No Trauma)</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-sm font-semibold text-[#0A2230]">
-                <CheckCircle2 className="w-4 h-4 text-[#0B7F8C] shrink-0" aria-hidden="true" />
-                <span>Patokan Mudah: Samping Gudang Alfa</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-sm font-semibold text-[#0A2230]">
-                <CheckCircle2 className="w-4 h-4 text-[#0B7F8C] shrink-0" aria-hidden="true" />
-                <span>Jadwal Terkoordinasi via WhatsApp</span>
-              </div>
+            {/* Dual Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <a
+                href="#lokasi"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-bold bg-[#0F2F2E] text-white hover:bg-[#1E4543] active:scale-[0.98] transition-spring shadow-xs"
+              >
+                <span>Lihat lokasi klinik</span>
+                <MapPin className="w-4 h-4 text-[#5EEAD4]" aria-hidden="true" />
+              </a>
+              <a
+                href="#layanan"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl text-sm font-bold bg-[#FFFFFF] text-[#0F2F2E] border border-[#E7E3DC] hover:bg-[#F3EFEA] hover:border-[#D5CFC5] active:scale-[0.98] transition-spring shadow-xs"
+              >
+                <span>Jelajahi layanan</span>
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </a>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
-              <Button
-                href="#reservasi"
-                variant="primary"
-                size="lg"
-                icon={Calendar}
-              >
-                Cek Jadwal & Slot Kunjungan
-              </Button>
-              <Button
-                href="#layanan-medis"
-                variant="outline"
-                size="lg"
-                iconRight={ArrowRight}
-              >
-                Lihat Layanan Medis
-              </Button>
-            </div>
-
-            {/* Location & Notice Snippet */}
-            <div className="pt-2 flex items-center gap-3 text-xs text-[#4B6375]">
-              <span className="flex items-center gap-1.5 font-medium">
-                <MapPin className="w-4 h-4 text-[#0B7F8C]" aria-hidden="true" />
-                Jl. Nasional III No. 26, Ciateul, Labuan
-              </span>
-              <span>·</span>
-              <span className="flex items-center gap-1.5 font-medium text-[#059669]">
-                <Clock className="w-3.5 h-3.5" aria-hidden="true" />
-                Konfirmasi Jadwal Harian
-              </span>
+            {/* Address Badge with Pin */}
+            <div className="pt-2">
+              <div className="inline-flex items-center gap-3 p-3.5 rounded-2xl bg-[#FFFFFF] border border-[#E7E3DC] shadow-xs">
+                <div className="w-8 h-8 rounded-xl bg-[#E6F2F0] text-[#0D9488] flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 h-4" aria-hidden="true" />
+                </div>
+                <div className="text-xs sm:text-sm leading-snug">
+                  <strong className="block font-bold text-[#0F2F2E]">
+                    Ciateul, Samping Gudang Alfa
+                  </strong>
+                  <span className="text-[#6B7280]">
+                    Jl. Nasional III No. 26, Labuan, Pandeglang
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Hero Visual Card with Smooth Zoom */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-3xl bg-white border border-[#0B7F8C]/15 p-4 sm:p-5 shadow-elevation transition-spring hover:shadow-elevation-hover group">
-              {/* Photo Container with overflow-hidden and img-zoom */}
-              <div className="relative h-80 sm:h-96 w-full rounded-2xl overflow-hidden border border-[#0B7F8C]/10 bg-[#E1F4F6]">
+          {/* Right Column: Large Photographic Card with Minimalist Caption */}
+          <div className="lg:col-span-6">
+            <div className="relative rounded-3xl overflow-hidden border border-[#E7E3DC] bg-[#FFFFFF] p-2.5 sm:p-3 shadow-xs group">
+              <div className="relative h-80 sm:h-96 lg:h-[430px] w-full rounded-2xl overflow-hidden bg-[#EAE6DF]">
                 <img
-                  src="/images/hero-clinic.jpg"
-                  alt="Interior Ruang Praktik Labuan Dental Clinic Modern & Steril"
+                  src="/images/real-hero.jpg"
+                  alt="Visual area ruang perawatan Labuan Dental Clinic berdasarkan fasilitas asli"
                   className="w-full h-full object-cover img-zoom"
                   loading="eager"
                 />
-
-                {/* Top Badge Overlay */}
-                <div className="absolute top-4 left-4">
-                  <Badge variant="verified" icon={Sparkles}>
-                    Ruang Perawatan Steril
-                  </Badge>
-                </div>
-
-                {/* Floating Rating Pill */}
-                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-md border border-[#F59E0B]/30 flex items-center gap-1.5">
-                  <Star className="w-4 h-4 text-[#F59E0B] fill-[#F59E0B]" aria-hidden="true" />
-                  <span className="text-xs font-bold text-[#0A2230]">5.0 / 5.0</span>
-                </div>
-
-                {/* Bottom Card Overlay */}
-                <div className="absolute bottom-4 left-4 right-4 rounded-xl p-3.5 border border-[#0B7F8C]/20 flex items-center justify-between shadow-sm bg-white/95 backdrop-blur-md text-[#0A2230]">
-                  <div>
-                    <h3 className="text-sm font-bold text-[#0A2230]">Labuan Dental Clinic (LDC)</h3>
-                    <p className="text-xs text-[#4B6375]">drg. Ansali Iklil Raudoh · SIP Aktif</p>
-                  </div>
-                  <a
-                    href={clinicData.contact.getWhatsappUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-bold px-3 py-1.5 rounded-lg bg-[#0B7F8C] text-white hover:bg-[#075E68] transition-colors shrink-0"
-                  >
-                    Tanya Jadwal
-                  </a>
-                </div>
               </div>
 
-              {/* Bento Quick Highlights below image */}
-              <div className="mt-4 grid grid-cols-3 gap-2 text-center">
-                <div className="p-2.5 rounded-xl bg-[#F4F8FA] border border-[#0B7F8C]/10">
-                  <span className="text-lg font-black text-[#0B7F8C] block">152+</span>
-                  <span className="text-[11px] font-semibold text-[#4B6375]">Ulasan Puas</span>
+              {/* Minimal Caption Box below image (Fre DentalCare signature) */}
+              <div className="pt-3 px-2 flex items-center justify-between text-xs">
+                <div>
+                  <span className="font-bold text-[#0F2F2E] block">
+                    {clinicData.name}
+                  </span>
+                  <p className="text-[#6B7280]">
+                    Area ruang perawatan gigi modern dan higienis
+                  </p>
                 </div>
-                <div className="p-2.5 rounded-xl bg-[#F4F8FA] border border-[#0B7F8C]/10">
-                  <span className="text-lg font-black text-[#059669] block">100%</span>
-                  <span className="text-[11px] font-semibold text-[#4B6375]">Steril Medis</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-[#F4F8FA] border border-[#0B7F8C]/10">
-                  <span className="text-lg font-black text-[#0A2230] block">5 Wilayah</span>
-                  <span className="text-[11px] font-semibold text-[#4B6375]">Cakupan Faskes</span>
-                </div>
+                <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-[#E6F2F0] text-[#0D9488]">
+                  Foto Fasilitas Asli
+                </span>
               </div>
             </div>
           </div>

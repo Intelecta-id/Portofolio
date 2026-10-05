@@ -1,11 +1,12 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
-import CredentialsLegal from "@/components/sections/CredentialsLegal";
-import DoctorProfile from "@/components/sections/DoctorProfile";
+import SignalBar from "@/components/sections/SignalBar";
+import EditorialPrinciples from "@/components/sections/EditorialPrinciples";
+import PhotoMosaic from "@/components/sections/PhotoMosaic";
 import ClinicalServices from "@/components/sections/ClinicalServices";
-import InteractiveBooking from "@/components/sections/InteractiveBooking";
+import DoctorProfile from "@/components/sections/DoctorProfile";
 import LocationWayfinding from "@/components/sections/LocationWayfinding";
-import PatientReviews from "@/components/sections/PatientReviews";
+import InteractiveBooking from "@/components/sections/InteractiveBooking";
 import PreVisitFaq from "@/components/sections/PreVisitFaq";
 import Footer from "@/components/layout/Footer";
 import StickyWhatsApp from "@/components/ui/StickyWhatsApp";
@@ -13,39 +14,39 @@ import StickyWhatsApp from "@/components/ui/StickyWhatsApp";
 export default function Home() {
   return (
     <>
-      {/* Top Navigation */}
       <Navbar />
 
-      <main>
-        {/* Section 1: Hero — Kepercayaan & Pelayanan Medis Gigi Modern */}
+      <main id="konten-utama">
+        {/* Section 1: Hero Editorial Minimalis */}
         <Hero />
 
-        {/* Section 2: Legalitas & Kredensial Resmi Kemenkes RI */}
-        <CredentialsLegal />
+        {/* Section 2: Signal Bar (3 Pilar Informasi) */}
+        <SignalBar />
 
-        {/* Section 3: Profil Dokter Penanggung Jawab (drg. Ansali Iklil Raudoh) */}
-        <DoctorProfile />
+        {/* Section 3: Prinsip Persiapan Kunjungan Terarah (01-02-03) */}
+        <EditorialPrinciples />
 
-        {/* Section 4: Matriks Layanan Medis Klinis (Terkonfirmasi Aktif vs Perlu Konfirmasi) */}
+        {/* Section 4: Galeri Suasana Ruang Bento Mosaic Asli */}
+        <PhotoMosaic />
+
+        {/* Section 5: Layanan Klinik dengan Foto Asli & Transparansi Biaya */}
         <ClinicalServices />
 
-        {/* Section 5: Web App Intelecta: Cek Jadwal, Draf Reservasi & Kalkulator Recall Scaling 6 Bulan */}
-        <InteractiveBooking />
+        {/* Section 6: Profil Dokter Penanggung Jawab Medis */}
+        <DoctorProfile />
 
-        {/* Section 6: Panduan Rute & Akses Lokasi (Ciateul, Samping Gudang Alfa) */}
+        {/* Section 7: Panduan Rute, Patokan Ciateul & Peta Lokasi */}
         <LocationWayfinding />
 
-        {/* Section 7: Reputasi Publik & Ulasan Pasien (Rating 5.0 dari 152 Pasien) */}
-        <PatientReviews />
+        {/* Section 8: Reservasi Cepat & Kalkulator Kontrol Rutin */}
+        <InteractiveBooking />
 
-        {/* Section 8: FAQ & Tanya Jawab Pra-Kunjungan Pasien */}
+        {/* Section 9: Tanya Jawab Pra-Kunjungan (FAQ Ringkas) */}
         <PreVisitFaq />
       </main>
 
-      {/* Footer dengan Intelecta Branding & Navigasi */}
       <Footer />
 
-      {/* Floating Sticky WhatsApp Quick Order & Consultation Button */}
       <StickyWhatsApp />
     </>
   );
