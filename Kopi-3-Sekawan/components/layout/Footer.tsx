@@ -1,5 +1,6 @@
 import React from "react";
-import { Coffee, MapPin, Camera, Compass, ExternalLink, ArrowUp } from "lucide-react";
+import Link from "next/link";
+import { Coffee, MapPin, Camera, Compass, ExternalLink } from "lucide-react";
 import { brandData } from "@/data/brandData";
 
 export default function Footer() {
@@ -50,22 +51,22 @@ export default function Footer() {
             </span>
             <ul className="space-y-2 text-sm text-oat/80">
               <li>
-                <a href="#akses" className="hover:text-crema transition-spring">
+                <a href="/#akses" className="hover:text-crema transition-spring">
                   Rute & Panduan Akses
                 </a>
               </li>
               <li>
-                <a href="#menu" className="hover:text-crema transition-spring">
+                <a href="/#menu" className="hover:text-crema transition-spring">
                   Digital Menu & Rekomendasi
                 </a>
               </li>
               <li>
-                <a href="#suasana" className="hover:text-crema transition-spring">
+                <a href="/#suasana" className="hover:text-crema transition-spring">
                   Suasana & Fasilitas WFC
                 </a>
               </li>
               <li>
-                <a href="#operasional" className="hover:text-crema transition-spring">
+                <a href="/#operasional" className="hover:text-crema transition-spring">
                   Jam Operasional Terkini
                 </a>
               </li>
@@ -99,8 +100,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom row with clearance for floating WhatsApp button */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-oat/60 pr-0 md:pr-20">
-          <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 text-center sm:text-left">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-oat/60 pr-0 md:pr-20">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 text-center sm:text-left">
             <p>
               &copy; {new Date().getFullYear()} {brandData.name} · Unit RA-03 Apartemen Brooklyn. All rights reserved.
             </p>
@@ -108,16 +109,25 @@ export default function Footer() {
             <p className="text-crema/90 font-medium">
               Designed & Developed by <span className="font-bold text-oat">Intelecta</span>
             </p>
+            <span className="hidden sm:inline text-oat/30">·</span>
+            <div className="flex items-center gap-2.5">
+              <Link
+                href="/privacy-policy"
+                target="_self"
+                className="text-oat/75 hover:text-crema transition-colors underline-offset-4 hover:underline"
+              >
+                Kebijakan Privasi
+              </Link>
+              <span className="text-oat/30">·</span>
+              <Link
+                href="/terms-conditions"
+                target="_self"
+                className="text-oat/75 hover:text-crema transition-colors underline-offset-4 hover:underline"
+              >
+                Syarat & Ketentuan
+              </Link>
+            </div>
           </div>
-
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-espresso-card text-oat border border-espresso-light/60 hover:bg-espresso-light hover:text-crema hover:border-crema transition-spring shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-crema group shrink-0"
-            aria-label="Kembali ke atas halaman"
-          >
-            <span>Kembali ke Atas</span>
-            <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
-          </a>
         </div>
       </div>
     </footer>

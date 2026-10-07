@@ -1,11 +1,13 @@
 import React from "react";
 import { LucideIcon } from "lucide-react";
 
+type IconComponent = LucideIcon | React.ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>;
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  icon?: LucideIcon;
-  iconRight?: LucideIcon;
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "whatsapp";
+  icon?: IconComponent;
+  iconRight?: IconComponent;
+  variant?: "primary" | "secondary" | "accent" | "outline" | "ghost" | "whatsapp";
   size?: "sm" | "md" | "lg";
   href?: string;
   target?: string;
@@ -36,15 +38,17 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      "bg-[#0C2725] text-white hover:bg-[#153E3B] active:scale-[0.98] shadow-sm hover:shadow-md focus-visible:ring-[#0C2725]",
+      "bg-[#2D6A5E] text-white hover:bg-[#1E4D44] active:scale-[0.98] shadow-xs hover:shadow-md focus-visible:ring-[#2D6A5E]",
+    accent:
+      "bg-[#E8A84C] text-[#1F2A28] hover:bg-[#D69438] active:scale-[0.98] shadow-xs hover:shadow-md focus-visible:ring-[#E8A84C]",
     secondary:
-      "bg-[#FFFFFF] text-[#0C2725] border border-[#E8E3D9] hover:bg-[#F5F1EB] hover:border-[#D8D2C5] active:scale-[0.98] shadow-xs focus-visible:ring-[#0C2725]",
+      "bg-[#FFFFFF] text-[#1F2A28] border border-[#E6E1D8] hover:bg-[#F3EFEA] hover:border-[#D6CFBF] active:scale-[0.98] shadow-xs focus-visible:ring-[#2D6A5E]",
     outline:
-      "border border-[#0D9488]/40 text-[#09736A] bg-transparent hover:border-[#0D9488] hover:bg-[#E6F2F0] active:scale-[0.98] focus-visible:ring-[#0D9488]",
+      "border border-[#2D6A5E] text-[#2D6A5E] bg-transparent hover:bg-[#EBF2F0] active:scale-[0.98] focus-visible:ring-[#2D6A5E]",
     ghost:
-      "text-[#09736A] bg-transparent hover:bg-[#E6F2F0] active:scale-[0.98] focus-visible:ring-[#0D9488]",
+      "text-[#2D6A5E] bg-transparent hover:bg-[#EBF2F0] active:scale-[0.98] focus-visible:ring-[#2D6A5E]",
     whatsapp:
-      "bg-[#107C41] text-white hover:bg-[#0B6634] active:scale-[0.98] shadow-sm hover:shadow-md focus-visible:ring-[#107C41]",
+      "bg-[#25D366] text-white hover:bg-[#20BA5A] active:scale-[0.98] shadow-xs hover:shadow-md focus-visible:ring-[#25D366]",
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;

@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={plusJakartaSans.variable}>
+    <html lang="id" className={plusJakartaSans.variable} data-scroll-behavior="smooth">
       <body className="bg-oat text-espresso font-body antialiased selection:bg-crema selection:text-white">
         {children}
       </body>

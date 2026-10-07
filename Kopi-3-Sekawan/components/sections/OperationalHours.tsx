@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Clock, CheckCircle2, XCircle, MapPin, MessageCircle, ExternalLink, Compass } from "lucide-react";
+import { Clock, CheckCircle2, XCircle, MapPin, ExternalLink, Compass } from "lucide-react";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { brandData } from "@/data/brandData";
 
 export default function OperationalHours() {
@@ -90,7 +91,7 @@ export default function OperationalHours() {
                   rel="noopener noreferrer"
                   variant="primary"
                   size="md"
-                  icon={MessageCircle}
+                  icon={WhatsAppIcon}
                 >
                   Pesan via WhatsApp Sekarang
                 </Button>

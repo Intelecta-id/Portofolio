@@ -1,45 +1,44 @@
 /* ============================================================
    LABUAN DENTAL CLINIC (LDC) - Global CSS
-   Editorial Serenity: Warm Clinical Aesthetic (Anti-AI-Slop)
-   WCAG 2.1 AA Compliant (Text Contrast >= 5.0:1 across all surfaces)
+   Clinical-Warmth Aesthetic (Anti-AI-Slop)
+   WCAG 2.1 AA Compliant (Text Contrast >= 4.5:1 across all surfaces)
    ============================================================ */
 
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&f[]=satoshi@400,500,700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-warm-linen: #FBF9F5;
-  --color-warm-surface: #F5F1EB;
-  --color-warm-border: #E8E3D9;
-  --color-card-white: #FFFFFF;
+  --color-primary: #2D6A5E;
+  --color-primary-dark: #1E4D44;
+  --color-primary-light: #EBF2F0;
+  --color-primary-border: #D1E3DF;
 
-  --color-slate-deep: #0C2725;
-  --color-slate-body: #1B3C39;
-  --color-slate-muted: #4D6765;
+  --color-accent: #E8A84C;
+  --color-accent-hover: #D69438;
+  --color-accent-soft: #FDF6EB;
 
-  --color-teal-accent: #0D9488;
-  --color-teal-deep: #09736A;
-  --color-sage-soft: #E6F2F0;
-  --color-sage-border: #C8E3DE;
+  --color-neutral-bg: #FAF8F4;
+  --color-neutral-text: #1F2A28;
+  --color-neutral-muted: #243330;
+  --color-neutral-border: #E6E1D8;
+  --color-surface: #FFFFFF;
 
-  --color-coral-disruptive: #C85A46;
-  --color-coral-soft: #FDF1EE;
-  --color-amber-star: #D97706;
-  --color-amber-soft: #FEF3C7;
-  --color-emerald-verified: #059669;
-  --color-emerald-soft: #ECFDF5;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #20BA5A;
 
-  --font-serif: var(--font-jakarta), system-ui, -apple-system, sans-serif;
-  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-heading: 'General Sans', var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-body: 'Satoshi', var(--font-jakarta), system-ui, -apple-system, sans-serif;
 }
 
 :root {
   --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --shadow-subtle: 0 4px 20px -2px rgba(12, 39, 37, 0.05);
-  --shadow-card-hover: 0 16px 32px -4px rgba(12, 39, 37, 0.09);
+  --shadow-soft: 0 4px 20px -2px rgba(45, 106, 94, 0.06);
+  --shadow-hover: 0 16px 36px -4px rgba(45, 106, 94, 0.12);
+  --radius-card: 20px;
 }
 
-/* Base resets & typography */
+/* Base resets and typography */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -49,16 +48,16 @@ html {
 }
 
 body {
-  background-color: #FBF9F5;
-  color: #0C2725;
-  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  background-color: #FAF8F4;
+  color: #1F2A28;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-.font-editorial {
-  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
-  letter-spacing: -0.025em;
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
 }
 
 /* Custom Spring Transitions */
@@ -84,7 +83,7 @@ body {
 
 .group:hover .img-zoom,
 .img-zoom:hover {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 /* WhatsApp Floating Button Pulse Ring */
@@ -93,7 +92,7 @@ body {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
   }
   70% {
-    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
   }
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
@@ -118,5 +117,9 @@ body {
   .img-zoom:hover {
     transform: none !important;
     transition: none !important;
+  }
+
+  .animate-wa-ring {
+    animation: none !important;
   }
 }

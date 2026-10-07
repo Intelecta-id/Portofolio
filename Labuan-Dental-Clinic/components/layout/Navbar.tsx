@@ -1,29 +1,33 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Menu,
-  X,
-  MessageCircle,
-} from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Button from "@/components/ui/Button";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { clinicData } from "@/data/clinicData";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = [
+    { label: "Beranda", href: "/" },
+    { label: "Tentang", href: "/#tentang" },
+    { label: "Layanan", href: "/#layanan" },
+    { label: "Dokter", href: "/#dokter" },
+    { label: "Fasilitas", href: "/#fasilitas" },
+    { label: "Lokasi", href: "/#lokasi" },
+  ];
+
   return (
-    <header className="sticky top-0 z-40 bg-[#FBF9F5]/95 backdrop-blur-md border-b border-[#E8E3D9] transition-spring">
-      {/* Main Navbar */}
+    <header className="sticky top-0 z-40 bg-[#FAF8F4]/92 backdrop-blur-md border-b border-[#E6E1D8] transition-spring">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo */}
           <a
-            href="#"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0C2725] rounded-xl shrink-0"
+            href="/"
+            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2D6A5E] rounded-xl shrink-0"
           >
-            {/* Elegant Clinic Emblem (No emoji, crisp SVG) */}
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#0C2725] text-white flex items-center justify-center shadow-xs transition-spring group-hover:scale-105 border border-[#2B4B48] shrink-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#2D6A5E] text-white flex items-center justify-center shadow-xs transition-spring group-hover:scale-105 shrink-0">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -31,7 +35,7 @@ export default function Navbar() {
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="w-5 h-5 text-[#5EEAD4]"
+                className="w-5 h-5 text-[#E8A84C]"
                 aria-hidden="true"
               >
                 <path d="M12 2C8.5 2 6 4.5 6 8c0 3 1.5 5.5 2 9 .4 2.8 1.8 5 4 5s3.6-2.2 4-5c.5-3.5 2-6 2-9 0-3.5-2.5-6-6-6Z" />
@@ -40,60 +44,33 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
-                <span className="text-base sm:text-lg lg:text-xl font-bold tracking-tight text-[#0C2725] group-hover:text-[#0D9488] transition-spring">
+                <span className="font-heading text-base sm:text-lg lg:text-xl font-bold tracking-tight text-[#1F2A28] group-hover:text-[#2D6A5E] transition-spring">
                   {clinicData.name}
                 </span>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#E6F2F0] text-[#09736A] shrink-0">
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#EBF2F0] text-[#2D6A5E] shrink-0">
                   {clinicData.shortName}
                 </span>
               </div>
-              <span className="text-[11px] font-medium text-[#4D6765]">
-                Kemenkes RI · Kec. Labuan, Pandeglang
+              <span className="text-[11px] font-medium text-[#243330]">
+                Kemenkes RI · Ciateul, Labuan
               </span>
             </div>
           </a>
 
-          {/* Desktop Navigation Links (Fre DentalCare style) */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-xs sm:text-sm font-semibold text-[#1B3C39]">
-            <a
-              href="#"
-              className="hover:text-[#0C2725] transition-spring"
-            >
-              Beranda
-            </a>
-            <a
-              href="#suasana-ruang"
-              className="hover:text-[#0C2725] transition-spring"
-            >
-              Suasana Ruang
-            </a>
-            <a
-              href="#layanan-tarif"
-              className="hover:text-[#0C2725] transition-spring"
-            >
-              Layanan & Tarif
-            </a>
-            <a
-              href="#profil-dokter"
-              className="hover:text-[#0C2725] transition-spring"
-            >
-              Tim Dokter
-            </a>
-            <a
-              href="#reservasi"
-              className="hover:text-[#0C2725] transition-spring"
-            >
-              Cek Jadwal
-            </a>
-            <a
-              href="#lokasi-rute"
-              className="hover:text-[#0C2725] transition-spring"
-            >
-              Lokasi & Rute
-            </a>
+          {/* Desktop Navigation Links (6 Focused Sections) */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-[#1F2A28]">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="hover:text-[#2D6A5E] transition-spring"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
-          {/* Right Action */}
+          {/* Right Action: WhatsApp CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <Button
               href={clinicData.contact.getWhatsappUrl()}
@@ -101,25 +78,30 @@ export default function Navbar() {
               rel="noopener noreferrer"
               variant="whatsapp"
               size="sm"
-              icon={MessageCircle}
+              icon={WhatsAppIcon}
             >
               Chat WhatsApp
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden">
-            <button
-              type="button"
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-xl text-[#0C2725] hover:bg-[#F5F1EB] transition-spring border border-[#E8E3D9]"
-              aria-label={isOpen ? "Tutup menu" : "Buka menu navigasi"}
+          <div className="flex lg:hidden items-center gap-2">
+            <a
+              href={clinicData.contact.getWhatsappUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-[#25D366] hover:bg-[#EBF2F0] rounded-xl transition-spring"
+              aria-label="Chat WhatsApp Admin"
             >
-              {isOpen ? (
-                <X className="w-5 h-5" aria-hidden="true" />
-              ) : (
-                <Menu className="w-5 h-5" aria-hidden="true" />
-              )}
+              <WhatsAppIcon className="w-6 h-6" />
+            </a>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-[#1F2A28] hover:text-[#2D6A5E] hover:bg-[#EBF2F0] rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2D6A5E] transition-spring"
+              aria-label={isOpen ? "Tutup menu navigasi" : "Buka menu navigasi"}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -127,63 +109,28 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="lg:hidden bg-[#FBF9F5] border-t border-[#E8E3D9] px-4 pt-4 pb-6 space-y-3 shadow-lg">
-          <nav className="flex flex-col space-y-2 text-sm font-semibold text-[#1B3C39]">
+        <div className="lg:hidden border-t border-[#E6E1D8] bg-[#FAF8F4] px-4 pt-3 pb-6 space-y-2 shadow-lg animate-fadeIn">
+          {navLinks.map((link) => (
             <a
-              href="#"
+              key={link.label}
+              href={link.href}
               onClick={() => setIsOpen(false)}
-              className="px-3 py-2 rounded-xl hover:bg-[#F5F1EB] transition-colors"
+              className="block px-3 py-2.5 rounded-xl text-base font-semibold text-[#1F2A28] hover:text-[#2D6A5E] hover:bg-[#EBF2F0] transition-spring"
             >
-              Beranda
+              {link.label}
             </a>
-            <a
-              href="#suasana-ruang"
-              onClick={() => setIsOpen(false)}
-              className="px-3 py-2 rounded-xl hover:bg-[#F5F1EB] transition-colors"
-            >
-              Suasana Ruang Klinik
-            </a>
-            <a
-              href="#layanan-tarif"
-              onClick={() => setIsOpen(false)}
-              className="px-3 py-2 rounded-xl hover:bg-[#F5F1EB] transition-colors"
-            >
-              Informasi Layanan & Tarif
-            </a>
-            <a
-              href="#profil-dokter"
-              onClick={() => setIsOpen(false)}
-              className="px-3 py-2 rounded-xl hover:bg-[#F5F1EB] transition-colors"
-            >
-              Tim Dokter Praktik
-            </a>
-            <a
-              href="#reservasi"
-              onClick={() => setIsOpen(false)}
-              className="px-3 py-2 rounded-xl hover:bg-[#F5F1EB] transition-colors"
-            >
-              Cek Jadwal & Slot
-            </a>
-            <a
-              href="#lokasi-rute"
-              onClick={() => setIsOpen(false)}
-              className="px-3 py-2 rounded-xl hover:bg-[#F5F1EB] transition-colors"
-            >
-              Lokasi & Petunjuk Arah
-            </a>
-          </nav>
-
-          <div className="pt-3 border-t border-[#E8E3D9] flex flex-col gap-2">
+          ))}
+          <div className="pt-3 border-t border-[#E6E1D8]">
             <Button
               href={clinicData.contact.getWhatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
               variant="whatsapp"
               size="md"
-              icon={MessageCircle}
-              className="w-full"
+              icon={WhatsAppIcon}
+              className="w-full justify-center"
             >
-              Chat WhatsApp Resmi
+              Chat WhatsApp (0831-2355-5554)
             </Button>
           </div>
         </div>

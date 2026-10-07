@@ -5,7 +5,6 @@ import {
   Building2,
   Compass,
   ExternalLink,
-  MessageCircle,
   Coffee,
   CheckCircle2,
   Sparkles,
@@ -13,6 +12,7 @@ import {
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { brandData } from "@/data/brandData";
 
 export default function Hero() {
@@ -76,7 +76,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 variant="primary"
                 size="lg"
-                icon={MessageCircle}
+                icon={WhatsAppIcon}
                 className="bg-crema hover:bg-crema-hover text-white shadow-lg hover:shadow-xl"
               >
                 Pesan Antar ke Unit / Lobi

@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, MessageCircle, HelpCircle } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { clinicData } from "@/data/clinicData";
 
 export default function PreVisitFaq() {
@@ -80,7 +81,7 @@ export default function PreVisitFaq() {
               rel="noopener noreferrer"
               variant="whatsapp"
               size="md"
-              icon={MessageCircle}
+              icon={WhatsAppIcon}
             >
               Hubungi Admin via WhatsApp ({clinicData.contact.phoneDisplay})
             </Button>

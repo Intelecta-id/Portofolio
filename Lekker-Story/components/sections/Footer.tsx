@@ -1,4 +1,6 @@
-import { Instagram, MessageCircle, ShoppingBag } from "lucide-react";
+import Link from "next/link";
+import { Instagram, ShoppingBag } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -57,7 +59,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 font-body text-sm text-[#F3EBD9]/70 hover:text-[#E8A93B] transition-colors duration-200"
               >
-                <MessageCircle size={16} />
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366]" />
                 WhatsApp
               </a>
               <div className="flex items-center gap-2.5 font-body text-sm text-[#F3EBD9]/70">
@@ -70,7 +72,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-6 border-t border-[#F3EBD9]/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 text-xs text-[#F3EBD9]/40 text-center sm:text-left">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5 sm:gap-3 text-xs text-[#F3EBD9]/40 text-center sm:text-left">
             <p className="font-body">
               &copy; {year} Lekker Story. Semua hak dilindungi.
             </p>
@@ -78,12 +80,30 @@ export default function Footer() {
             <p className="font-body text-[#E8A93B]/80 font-medium">
               Designed & Developed by <span className="font-bold text-[#F3EBD9]">Intelecta</span>
             </p>
+            <span className="hidden sm:inline text-[#F3EBD9]/20">·</span>
+            <div className="flex items-center gap-2.5">
+              <Link
+                href="/privacy-policy"
+                target="_self"
+                className="text-[#F3EBD9]/60 hover:text-[#E8A93B] transition-colors underline-offset-4 hover:underline"
+              >
+                Kebijakan Privasi
+              </Link>
+              <span className="text-[#F3EBD9]/20">·</span>
+              <Link
+                href="/terms-conditions"
+                target="_self"
+                className="text-[#F3EBD9]/60 hover:text-[#E8A93B] transition-colors underline-offset-4 hover:underline"
+              >
+                Syarat & Ketentuan
+              </Link>
+            </div>
           </div>
           <nav className="flex gap-4">
             {[
-              { href: "#menu", label: "Menu" },
-              { href: "#cabang", label: "Cabang" },
-              { href: "#cara-pesan", label: "Pesan" },
+              { href: "/#menu", label: "Menu" },
+              { href: "/#cabang", label: "Cabang" },
+              { href: "/#cara-pesan", label: "Pesan" },
             ].map((l) => (
               <a key={l.href} href={l.href} className="font-body text-[#F3EBD9]/40 text-xs hover:text-[#F3EBD9]/70 transition-colors">
                 {l.label}

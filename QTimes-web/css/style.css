@@ -737,6 +737,13 @@ section {
     flex-shrink: 0;
 }
 
+.info-block .wa-logo {
+    width: 2rem;
+    height: 2rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
 .info-block h3 {
     font-family: var(--font-body);
     font-size: 1.1rem;
@@ -860,6 +867,11 @@ section {
 .floating-wa:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+.floating-wa .wa-logo {
+    width: 55%;
+    height: 55%;
 }
 
 /* Animations */

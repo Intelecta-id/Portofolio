@@ -1,4 +1,5 @@
-import { ShoppingBag, MessageCircle, Store } from "lucide-react";
+import { ShoppingBag, Store } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 const platforms = [
   {
@@ -28,7 +29,7 @@ const platforms = [
     step: "3",
     label: "Chat WhatsApp",
     desc: "Tanya menu, cari cabang terdekat, atau pesan langsung via WA.",
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     href: "https://wa.me/6281234567890",
     cta: "Chat sekarang",
     bg: "#F3EBD9",

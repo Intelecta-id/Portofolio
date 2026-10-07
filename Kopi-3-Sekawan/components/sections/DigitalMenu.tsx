@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Coffee, Sparkles, MessageCircle, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Coffee, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { brandData, MenuItem } from "@/data/brandData";
 
 export default function DigitalMenu() {
@@ -122,7 +123,7 @@ export default function DigitalMenu() {
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-crema/10 text-crema hover:bg-crema hover:text-white transition-spring"
                     title={`Pesan ${item.name} via WhatsApp`}
                   >
-                    <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
+                    <WhatsAppIcon className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Pesan</span>
                   </a>
                 </div>
@@ -147,7 +148,7 @@ export default function DigitalMenu() {
             rel="noopener noreferrer"
             variant="primary"
             size="md"
-            icon={MessageCircle}
+            icon={WhatsAppIcon}
             className="shrink-0"
           >
             Chat WhatsApp Barista

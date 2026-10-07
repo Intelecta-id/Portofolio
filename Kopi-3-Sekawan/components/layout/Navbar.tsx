@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Brand & Location Indicator */}
           <a
-            href="#"
+            href="/"
             className="flex items-center gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-crema rounded-lg"
           >
             <div className="w-11 h-11 rounded-xl bg-espresso text-oat flex items-center justify-center shadow-md transition-spring group-hover:bg-crema group-hover:rotate-6">
@@ -34,25 +34,25 @@ export default function Navbar() {
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-espresso/80">
             <a
-              href="#akses"
+              href="/#akses"
               className="hover:text-crema transition-spring focus-visible:outline-none focus-visible:text-crema"
             >
               Rute & Akses
             </a>
             <a
-              href="#menu"
+              href="/#menu"
               className="hover:text-crema transition-spring focus-visible:outline-none focus-visible:text-crema"
             >
               Digital Menu
             </a>
             <a
-              href="#suasana"
+              href="/#suasana"
               className="hover:text-crema transition-spring focus-visible:outline-none focus-visible:text-crema"
             >
               Suasana WFC
             </a>
             <a
-              href="#operasional"
+              href="/#operasional"
               className="hover:text-crema transition-spring focus-visible:outline-none focus-visible:text-crema"
             >
               Jam Buka
@@ -106,28 +106,28 @@ export default function Navbar() {
         <div className="md:hidden bg-cream border-b border-espresso/10 px-4 pt-3 pb-6 space-y-3 animate-fade-up">
           <nav className="flex flex-col space-y-2.5 text-base font-medium text-espresso">
             <a
-              href="#akses"
+              href="/#akses"
               onClick={() => setIsOpen(false)}
               className="px-3 py-2 rounded-lg hover:bg-espresso/5 transition-spring"
             >
               Rute & Akses RA-03
             </a>
             <a
-              href="#menu"
+              href="/#menu"
               onClick={() => setIsOpen(false)}
               className="px-3 py-2 rounded-lg hover:bg-espresso/5 transition-spring"
             >
               Digital Menu
             </a>
             <a
-              href="#suasana"
+              href="/#suasana"
               onClick={() => setIsOpen(false)}
               className="px-3 py-2 rounded-lg hover:bg-espresso/5 transition-spring"
             >
               Suasana WFC
             </a>
             <a
-              href="#operasional"
+              href="/#operasional"
               onClick={() => setIsOpen(false)}
               className="px-3 py-2 rounded-lg hover:bg-espresso/5 transition-spring"
             >

@@ -1,59 +1,43 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
-import SignalBar from "@/components/sections/SignalBar";
-import EditorialPrinciples from "@/components/sections/EditorialPrinciples";
-import PhotoMosaic from "@/components/sections/PhotoMosaic";
+import AboutClinic from "@/components/sections/AboutClinic";
 import ClinicalServices from "@/components/sections/ClinicalServices";
 import DoctorProfile from "@/components/sections/DoctorProfile";
-import InteractiveBooking from "@/components/sections/InteractiveBooking";
+import FacilityGallery from "@/components/sections/FacilityGallery";
 import LocationWayfinding from "@/components/sections/LocationWayfinding";
-import PatientReviews from "@/components/sections/PatientReviews";
-import PreVisitFaq from "@/components/sections/PreVisitFaq";
 import Footer from "@/components/layout/Footer";
 import StickyWhatsApp from "@/components/ui/StickyWhatsApp";
 
 export default function Home() {
   return (
     <>
-      {/* Header Navigasi */}
+      {/* Header & Navigasi */}
       <Navbar />
 
       <main id="konten-utama">
-        {/* Section 1: Hero Editorial (Fre DentalCare structure) */}
+        {/* Section 1: Beranda / Hero */}
         <Hero />
 
-        {/* Section 2: Signal Bar (3 Pilar Informasi Cepat) */}
-        <SignalBar />
+        {/* Section 2: Tentang Klinik */}
+        <AboutClinic />
 
-        {/* Section 3: Prinsip Persiapan Kunjungan Terarah (01-02-03) */}
-        <EditorialPrinciples />
-
-        {/* Section 4: Galeri Suasana Ruang Bento Mosaic */}
-        <PhotoMosaic />
-
-        {/* Section 5: Informasi Layanan Klinis & Transparansi Estimasi Tarif */}
+        {/* Section 3: Layanan & Estimasi Tarif */}
         <ClinicalServices />
 
-        {/* Section 6: Profil Dokter Penanggung Jawab Medis (drg. Ansali Iklil Raudoh) */}
+        {/* Section 4: Profil Dokter Penanggung Jawab */}
         <DoctorProfile />
 
-        {/* Section 7: Sistem Reservasi, Cek Jadwal & Kalkulator Scaling 6 Bulan */}
-        <InteractiveBooking />
+        {/* Section 5: Fasilitas & Standar Kebersihan */}
+        <FacilityGallery />
 
-        {/* Section 8: Panduan Akses Rute Ciateul Samping Gudang Alfa & Peta Maps */}
+        {/* Section 6: Lokasi, Jam Praktik & Peta */}
         <LocationWayfinding />
-
-        {/* Section 9: Reputasi Publik & Ulasan Pasien Terverifikasi (Rating 5.0) */}
-        <PatientReviews />
-
-        {/* Section 10: Tanya Jawab Pra-Kunjungan (FAQ) */}
-        <PreVisitFaq />
       </main>
 
-      {/* Footer Navigasi & Branding Intelecta */}
+      {/* Footer Navigasi & Branding */}
       <Footer />
 
-      {/* Tombol Mengambang WhatsApp Cepat */}
+      {/* Tombol Mengambang WhatsApp Resmi */}
       <StickyWhatsApp />
     </>
   );

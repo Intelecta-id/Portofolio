@@ -1,196 +1,183 @@
 "use client";
 
-import React, { useState } from "react";
-import {
-  MapPin,
-  ClipboardList,
-  ArrowRight,
-  ExternalLink,
-  Copy,
-  Check,
-  Navigation,
-} from "lucide-react";
+import React from "react";
+import { MapPin, Clock, Phone, ExternalLink, Navigation, CheckCircle2 } from "lucide-react";
+import Button from "@/components/ui/Button";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import { clinicData } from "@/data/clinicData";
 
 export default function LocationWayfinding() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(
-      `${clinicData.location.address} (Patokan: ${clinicData.location.landmark})`
-    );
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const whatsappUrl = clinicData.contact.getWhatsappUrl(
+    "Halo Labuan Dental Clinic, saya ingin konfirmasi jadwal praktik dan membuat janji temu hari ini."
+  );
 
   return (
-    <section id="lokasi-rute" className="py-16 sm:py-20 bg-[#FFFFFF] border-b border-[#EAE6DF]">
+    <section id="lokasi" className="py-16 md:py-24 bg-white border-t border-[#E6E1D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Next Quick Links Grid (Fre DentalCare signature layout) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-14">
-          <a
-            href="#faq-pasien"
-            className="group flex items-center justify-between p-6 sm:p-7 rounded-3xl bg-[#FAF8F5] hover:bg-[#F5F1EB] border border-[#EAE6DF] hover:border-[#D8D2C5] transition-spring shadow-xs"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#E6F2F0] text-[#0D9488] group-hover:bg-[#111827] group-hover:text-white flex items-center justify-center shrink-0 transition-spring">
-                <ClipboardList className="w-6 h-6" aria-hidden="true" />
-              </div>
-              <div className="space-y-0.5">
-                <strong className="block text-base font-bold text-[#111827] group-hover:text-[#0D9488] transition-colors">
-                  Sebelum berkunjung
-                </strong>
-                <small className="block text-xs sm:text-sm text-[#6B7280]">
-                  Siapkan pertanyaan dan pahami informasi dasar sebelum datang ke klinik.
-                </small>
-              </div>
-            </div>
-            <div className="w-8 h-8 rounded-xl text-[#9CA3AF] group-hover:text-[#111827] group-hover:translate-x-1 flex items-center justify-center shrink-0 transition-spring">
-              <ArrowRight className="w-5 h-5" aria-hidden="true" />
-            </div>
-          </a>
-
-          <a
-            href={clinicData.location.googleMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center justify-between p-6 sm:p-7 rounded-3xl bg-[#FAF8F5] hover:bg-[#F5F1EB] border border-[#EAE6DF] hover:border-[#D8D2C5] transition-spring shadow-xs"
-          >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#E6F2F0] text-[#0D9488] group-hover:bg-[#111827] group-hover:text-white flex items-center justify-center shrink-0 transition-spring">
-                <MapPin className="w-6 h-6" aria-hidden="true" />
-              </div>
-              <div className="space-y-0.5">
-                <strong className="block text-base font-bold text-[#111827] group-hover:text-[#0D9488] transition-colors">
-                  Lokasi Labuan Dental Clinic
-                </strong>
-                <small className="block text-xs sm:text-sm text-[#6B7280]">
-                  Temukan patokan Ciateul samping Gudang Alfa dan buka petunjuk arah saat kamu siap.
-                </small>
-              </div>
-            </div>
-            <div className="w-8 h-8 rounded-xl text-[#9CA3AF] group-hover:text-[#111827] group-hover:translate-x-1 flex items-center justify-center shrink-0 transition-spring">
-              <ArrowRight className="w-5 h-5" aria-hidden="true" />
-            </div>
-          </a>
-        </div>
-
-        {/* Section Lead */}
-        <div className="max-w-3xl mb-10">
-          <span className="text-xs sm:text-sm font-semibold tracking-wider text-[#6B7280] uppercase block mb-1.5">
-            Panduan Akses & Navigasi
-          </span>
-          <h2 className="font-editorial text-2xl sm:text-4xl font-bold text-[#111827] leading-tight">
-            Mudah ditemukan di jalur utama Labuan.
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF2F0] text-xs font-bold text-[#2D6A5E]">
+            Akses, Jadwal & Kontak
+          </div>
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#1F2A28] tracking-tight">
+            Lokasi Praktik & Jam Operasional
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#4B5563] leading-relaxed">
-            Berada di tepi jalan raya utama dengan patokan fisik yang sangat dikenal warga lokal di Ciateul, memudahkan kedatangan dari Carita, Menes, maupun Panimbang.
+          <p className="text-base sm:text-lg text-[#243330] leading-relaxed">
+            Terletak strategis di jalur utama Ciateul, tepat di samping Gudang Alfa. Silakan konfirmasi jadwal terlebih dahulu via WhatsApp sebelum kedatangan.
           </p>
         </div>
 
-        {/* Visual Route Grid: Exterior Photo + Address Breakdown */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mb-10">
-          {/* Exterior Photo Card */}
-          <div className="lg:col-span-6 relative rounded-3xl overflow-hidden border border-[#EAE6DF] bg-[#FFFFFF] shadow-subtle min-h-[340px] group">
-            <img
-              src="/images/clinic-exterior.jpg"
-              alt="Tampak depan gedung Labuan Dental Clinic di samping Gudang Alfa Ciateul"
-              className="w-full h-full object-cover img-zoom"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/90 via-[#111827]/30 to-transparent pointer-events-none" />
+        {/* 2 Columns: Address & Schedule on left, Map & Route on right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Address, Schedule, and WhatsApp Action */}
+          <div className="lg:col-span-6 space-y-6">
+            {/* Address Card */}
+            <div className="p-6 sm:p-7 rounded-3xl bg-[#FAF8F4] border border-[#E6E1D8] space-y-4 shadow-xs">
+              <div className="flex items-start gap-3.5">
+                <div className="w-11 h-11 rounded-2xl bg-[#2D6A5E] text-white flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-[#E8A84C]" />
+                </div>
+                <div className="space-y-1">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#2D6A5E] block">
+                    Alamat Lengkap Praktik
+                  </span>
+                  <p className="font-heading font-bold text-base text-[#1F2A28] leading-snug">
+                    {clinicData.location.address}
+                  </p>
+                  <p className="text-xs sm:text-sm text-[#243330]">
+                    Patokan: <span className="font-semibold text-[#1F2A28]">{clinicData.location.landmark}</span>
+                  </p>
+                </div>
+              </div>
 
-            <div className="absolute bottom-5 left-5 right-5 text-white space-y-1">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#5EEAD4] px-2.5 py-0.5 rounded-full bg-black/50 backdrop-blur-xs inline-block">
-                Patokan Nyata Lapangan
-              </span>
-              <h3 className="font-editorial text-lg sm:text-xl font-bold text-white">
-                Ciateul, Tepat di Samping Gudang Alfa
-              </h3>
-              <p className="text-xs text-white/80 leading-relaxed">
-                Akses mudah di tepi jalan raya dengan area parkir motor dan mobil langsung di depan klinik.
-              </p>
+              {/* Wayfinding guidance */}
+              <div className="pt-3 border-t border-[#E6E1D8] text-xs text-[#243330] space-y-2">
+                <span className="font-bold text-[#1F2A28] block">Petunjuk Akses Transportasi:</span>
+                <ul className="space-y-1.5 list-disc list-inside">
+                  <li>Dari arah Pasar Labuan: Menuju selatan arah Ciateul sekitar 3-5 menit berkendara.</li>
+                  <li>Dari arah Carita: Mengikuti jalan pesisir menuju pusat Labuan, belok ke jalan utama Ciateul.</li>
+                  <li>Dari arah Menes / Pandeglang: Berada di sisi jalan poros utama sebelum pusat pertokoan Labuan.</li>
+                </ul>
+              </div>
             </div>
-          </div>
 
-          {/* Right Column: Address & Direct Action */}
-          <div className="lg:col-span-6 flex flex-col justify-between space-y-4">
-            <div className="bg-[#FAF8F5] rounded-3xl p-6 sm:p-7 border border-[#EAE6DF] shadow-xs space-y-3">
+            {/* Operating Hours Table */}
+            <div className="p-6 sm:p-7 rounded-3xl bg-[#FAF8F4] border border-[#E6E1D8] space-y-4 shadow-xs">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#0D9488]">
-                  Alamat Administratif Resmi
-                </span>
-                <span className="text-[11px] font-semibold text-[#6B7280]">
-                  Kecamatan Labuan, Pandeglang
+                <div className="flex items-center gap-2.5">
+                  <Clock className="w-5 h-5 text-[#2D6A5E]" />
+                  <h3 className="font-heading font-bold text-base text-[#1F2A28]">
+                    Estimasi Jam Praktik Dokter
+                  </h3>
+                </div>
+                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-[#E8A84C]/20 text-[#8F590F]">
+                  Wajib Reservasi
                 </span>
               </div>
 
-              <p className="text-base sm:text-lg font-bold text-[#111827] leading-snug">
-                {clinicData.location.address}
-              </p>
-              <p className="text-xs text-[#6B7280]">
-                {clinicData.location.altAddress}
-              </p>
+              <div className="divide-y divide-[#E6E1D8] text-xs sm:text-sm">
+                {clinicData.operationalSchedule.scheduleEstimate.map((item, idx) => (
+                  <div key={idx} className="py-2.5 flex items-center justify-between gap-4">
+                    <span className="font-semibold text-[#1F2A28]">{item.day}</span>
+                    <div className="text-right">
+                      <span className="text-[#2D6A5E] font-bold block">{item.hours.replace(/–/g, "-")}</span>
+                      <span className="text-[11px] text-[#243330]">{item.status}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
-                <button
-                  type="button"
-                  onClick={handleCopy}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#FFFFFF] text-[#111827] border border-[#EAE6DF] hover:bg-[#F5F1EB] transition-spring shadow-xs"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-[#059669]" aria-hidden="true" />
-                      <span>Alamat Tersalin</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5 text-[#6B7280]" aria-hidden="true" />
-                      <span>Salin Alamat & Patokan</span>
-                    </>
-                  )}
-                </button>
+              <div className="p-3 rounded-xl bg-white border border-[#E6E1D8] text-xs text-[#243330] space-y-1">
+                <span className="font-bold text-[#1F2A28] block">Catatan Konfirmasi Slot:</span>
+                <p className="leading-relaxed">
+                  Jam praktik dokter dapat mengalami penyesuaian harian. Pasien sangat disarankan melakukan reservasi atau konfirmasi ketersediaan slot melalui WhatsApp sebelum kedatangan.
+                </p>
+              </div>
 
-                <a
+              {/* Action Button */}
+              <Button
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="whatsapp"
+                size="md"
+                icon={WhatsAppIcon}
+                className="w-full justify-center"
+              >
+                Chat WhatsApp & Reservasi Slot Sekarang
+              </Button>
+            </div>
+          </div>
+
+          {/* Right Column: Google Maps Embed & Interactive Directions */}
+          <div className="lg:col-span-6 space-y-6">
+            <div className="rounded-3xl border border-[#E6E1D8] overflow-hidden shadow-xs bg-[#FAF8F4] flex flex-col">
+              {/* Responsive Maps Embed */}
+              <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full bg-[#E6E1D8]">
+                <iframe
+                  title="Peta Lokasi Labuan Dental Clinic di Google Maps"
+                  src={clinicData.location.mapsEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                />
+              </div>
+
+              {/* Map Footer Action */}
+              <div className="p-5 bg-white border-t border-[#E6E1D8] flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="text-xs text-center sm:text-left">
+                  <span className="font-bold text-[#1F2A28] block">Koordinat Terdaftar di Google Maps</span>
+                  <span className="text-[#243330]">Navigasi akurat langsung ke depan pintu klinik</span>
+                </div>
+                <Button
                   href={clinicData.location.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#111827] text-white hover:bg-[#1F2937] transition-spring shadow-xs"
+                  variant="primary"
+                  size="sm"
+                  icon={Navigation}
+                  className="shrink-0"
                 >
-                  <Navigation className="w-3.5 h-3.5 text-[#5EEAD4]" aria-hidden="true" />
-                  <span>Buka Google Maps</span>
-                  <ExternalLink className="w-3 h-3 text-white/60 ml-0.5" aria-hidden="true" />
-                </a>
+                  Buka Petunjuk Arah
+                </Button>
               </div>
             </div>
 
-            {/* Regional Transport Hints */}
-            <div className="bg-[#FAF8F5] rounded-3xl p-6 sm:p-7 border border-[#EAE6DF] shadow-xs space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#0D9488] block">
-                Panduan Rute Pasien
+            {/* Quick Contact Box */}
+            <div className="p-6 rounded-3xl bg-[#EBF2F0] border border-[#D1E3DF] space-y-3">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2D6A5E] block">
+                Saluran Komunikasi Resmi
               </span>
-              <p className="text-xs text-[#374151] leading-relaxed">
-                Dari arah <strong>Carita</strong> atau <strong>Menes/Pandeglang</strong>, ikuti jalan poros utama menuju Ciateul Labuan. Klinik terletak persis di samping Gudang Alfa dengan plang nama yang terlihat jelas.
-              </p>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs sm:text-sm">
+                <div>
+                  <span className="text-[#243330] block">Nomor WhatsApp:</span>
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-[#2D6A5E] hover:underline"
+                  >
+                    {clinicData.contact.phoneDisplay}
+                  </a>
+                </div>
+                <div>
+                  <span className="text-[#243330] block">Instagram Resmi:</span>
+                  <a
+                    href={clinicData.location.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-[#2D6A5E] hover:underline flex items-center gap-1"
+                  >
+                    <span>{clinicData.location.instagramHandle}</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-        {/* Interactive Google Maps Frame */}
-        <div className="rounded-3xl overflow-hidden border border-[#EAE6DF] shadow-subtle bg-[#FFFFFF] p-2">
-          <div className="relative h-80 sm:h-96 w-full rounded-2xl overflow-hidden bg-[#F5F1EB]">
-            <iframe
-              src={clinicData.location.mapsEmbedUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Peta Lokasi Google Maps Labuan Dental Clinic"
-              className="w-full h-full"
-            />
           </div>
         </div>
       </div>

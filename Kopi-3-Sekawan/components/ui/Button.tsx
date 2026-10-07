@@ -1,10 +1,12 @@
 import React from "react";
 import { LucideIcon } from "lucide-react";
 
+type IconComponent = LucideIcon | React.ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>;
+
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  icon?: LucideIcon;
-  iconRight?: LucideIcon;
+  icon?: IconComponent;
+  iconRight?: IconComponent;
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
   href?: string;

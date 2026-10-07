@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 
 
 const navLinks = [
-  { href: "#menu", label: "Menu" },
-  { href: "#cabang", label: "Cabang" },
-  { href: "#cara-pesan", label: "Cara Pesan" },
+  { href: "/#menu", label: "Menu" },
+  { href: "/#cabang", label: "Cabang" },
+  { href: "/#cara-pesan", label: "Cara Pesan" },
 ];
 
 export default function Navbar() {
@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
         <a
-          href="#"
+          href="/"
           className="flex items-center gap-2 font-display font-bold text-[#E8A93B] text-lg tracking-tight"
         >
           <img src="/logo.png" alt="Lekker Story Logo" className="h-6 w-auto" />
@@ -47,7 +47,7 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="#cara-pesan"
+              href="/#cara-pesan"
               className="ml-2 px-4 py-1.5 rounded bg-[#E8A93B] text-[#3A2318] text-sm font-body font-600 hover:bg-[#d4963a] transition-colors duration-200"
               style={{ fontWeight: 600 }}
             >
@@ -58,7 +58,7 @@ export default function Navbar() {
 
         {/* Mobile: just show order button */}
         <a
-          href="#cara-pesan"
+          href="/#cara-pesan"
           className="md:hidden px-3 py-1.5 rounded bg-[#E8A93B] text-[#3A2318] text-sm font-body"
           style={{ fontWeight: 600 }}
         >

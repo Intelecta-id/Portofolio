@@ -55,7 +55,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${bricolage.variable} ${publicSans.variable} ${caveat.variable}`}>
+    <html lang="id" className={`${bricolage.variable} ${publicSans.variable} ${caveat.variable}`} data-scroll-behavior="smooth">
       <body className="font-body antialiased">{children}</body>
     </html>
   );
